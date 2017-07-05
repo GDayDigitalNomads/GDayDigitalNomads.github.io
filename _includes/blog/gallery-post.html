@@ -1,0 +1,58 @@
+
+                            {% assign gallery = post.gallery %}
+                            {% if gallery.images %}
+                            <div class="full-width  m-bot-0">
+                                <div class="post-slider post-img text-center">
+                                    <ul class="slides">
+                                            {% for image in gallery.images %}
+                                                <li>
+                                                    <a href="{{ post.url }}" title="{{ post.title }}">
+                                                    {% assign title = image.title %}
+                                                    {% unless image.title %}
+                                                        {% assign title = image.url | split: '_' | last | split: '.' | first | replace: '--', ', ' | replace: '-', ' ' | replace: '/', ' ' %}
+                                                    {% endunless %}
+                                                        <img src="{{ site.gallery-image-url }}/{{ gallery.directory }}/{{ gallery.related }}/{{ image.url }}" alt="{{ title }}">
+                                                    </a>
+                                                </li>
+                                            {% endfor %}
+                                    </ul>
+                                </div>
+                            </div>
+                            <!-- GALLERY IMAGES FOUND -->
+                            {% elsif gallery.sitegallery %}
+                            <div class="full-width  m-bot-0">
+                                <div class="post-slider post-img text-center">
+                                    <ul class="slides">
+                                {% for site_gallery in site.data.galleries %}
+                                        {% if gallery.sitegallery == site_gallery.title %}
+                                            {% for image in site_gallery.images %}
+                                                <li>
+                                                    <a href="{{ post.url }}" title="{{ post.title }}">
+                                                    {% assign title = image.title %}
+                                                    {% unless image.title %}
+                                                        {% assign title = image.url | split: '_' | last | split: '.' | first | replace: '--', ', ' | replace: '-', ' ' | replace: '/', ' ' %}
+                                                    {% endunless %}
+                                                    {% if site_gallery.related %}
+                                                        {% capture url %}{{ site.gallery-image-url }}/{{ site_gallery.directory }}/{{ site_gallery.related }}/{{ image.url }}{% endcapture %}
+                                                    {% else %}
+                                                        {% capture url %}{{ site.gallery-image-url }}/{{ site_gallery.directory }}/{{ image.url }}{% endcapture %}
+                                                    {% endif %}
+                                                        <img src="{{ url }}" alt="{{ title }}">
+                                                    </a>
+                                                </li>
+                                            {% endfor %}
+                                            {% break %}
+                                        {% endif %}
+                                {% endfor %}
+                                    <!-- SITE GALLERY IMAGES FOUND -->
+                                    </ul>
+                                </div>
+                            </div>
+                            {% endif %}
+
+
+
+
+
+
+

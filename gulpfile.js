@@ -55,10 +55,6 @@ gulp.task('copy-static', ['minify-js', 'minify-css',], function() {
 })
 
 
-gulp.task('copy-images', function() {
-    return gulp.src(['./images/**']).pipe(gulp.dest('./_site/images'));
-})
-
 
 // Watch tasks
 gulp.task('watch:css', function () {
@@ -74,6 +70,6 @@ gulp.task('watch:js', function () {
 });
 
 
-gulp.task('default', ['copy-images', 'copy-static', 'watch']);
-gulp.task('setup', ['copy-images', 'copy-static']);
+gulp.task('default', ['copy-static', 'watch']);
+gulp.task('setup', ['copy-static']);
 gulp.task('watch', ['watch:css', 'watch:sass', 'watch:js']);

@@ -1,56 +1,74 @@
 # Site settings
 title: Gday Digital Nomads
 email:
-description: An introduction to becoming a digital nomad
+description: A Blog for Digital Nomads
 
 baseurl: "" # the subpath of your site, e.g. /blog/ (If you use organization leave empty)
 url: "https://www.gdaydigitalnomads.com" # the base hostname & protocol for your site
 resource-url: "/static"
-post-image-url: "/images"
+image-url: "/static/images"
 static-image-url: "/static/img"
-product-image-url: "/images/shop"
+post-image-url: "/static/images/posts"
+gallery-image-url: "/static/images/galleries"
+product-image-url: "/static/images/shop"
+## Image types: fullwidth (width: 2200), large (width: 1100), feature(width: 720), relate (width: 330), thumbnail (width: 80 or 60)
 
-#Google Ad Words Data from scripts code (using Google responsive options) and ad client
-data-ad-slot: 2973388149
-data-ad-client: ca-pub-9204963049240271
-google_ad_client: ca-pub-9204963049240271
+environment-url: local.gdaydigitalnomads.com
 
+#Third parties
 google_analytics: "UA-98384350-1"
-addthis_id: ra-5644da281510c62f
-disqus_account: jeky-new-age-account
+addthis_id: ra-5949179a3d64ca1c
+disqus_account: local-gdaydigitalnomads
 
 # Social networks usernames (many more available: flickr, dribbble, pinterest, instagram, tumblr, linkedin, etc.) see all icon at fontawesome.io
 social:
-  - title: twitter
-    url: https://twitter.com/lantoniotrento
   - title: facebook
-    url: https://facebook.com/lantoniotrento
+    url: https://facebook.com/gdaydigitalnomads
+  - title: twitter
+    url: https://twitter.com/g_nomads
+  - title: instagram
+    url: https://instagram.com/gdaytravelers
+  - title: youtube
+    url: https://youtube.com/channel/UCsDgPi0tRpAv6YIMbzgIdnA    
   - title: google-plus
-    url: https://plus.google.com/+AntoniotrentoIt
-  #- title: github
-  #  url: http://github.com/jekyll
+    url: https://plus.google.com/b/105685917314373457989/105685917314373457989
+  - title: github
+    url: https://github.com/GDayDigitalNomads
 
 # Build settings
 markdown: kramdown
 highlighter: rouge
-permalink: pretty
-include: ["_pages"]
-exclude: ["node_modules","gulpfile.js","package.json","README.md","LICENSE","CNAME","static","images"]
-keep_files: ["static","images"]
+include: ["_pages", "_profiles"]
+exclude: ["node_modules","gulpfile.js","package.json","README.md","LICENSE","CNAME", "_profiles"]
 permalink: pretty
 collections:
   shop:
     output: true
-    permalink: /shop/:categories/:title.html
+    permalink: /shop/:categories/:title.html  
+  posts:
+    output: true
+    permalink: /blog/:categories/:title.html      
+  profiles:
+    permalink: /profiles/:name.html        
 
 defaults:
   - scope:
       path: ""
       type: shop
     values:
-      layout: product    
+      layout: product
+  - scope:
+      path: ""
+      type: profiles
+    values:
+      layout: template      
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
 
 gems: [jekyll-feed]
 # Build settings
 
-port: 4000
+port: 80

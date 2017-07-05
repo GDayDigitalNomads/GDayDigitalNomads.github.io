@@ -1,0 +1,37 @@
+
+			<!-- instagram feed -->
+
+			{% if _galleries %}
+			{% if _galleries.size > 0 %}
+			<div class="row">
+				<div class="col-md-12">
+					<div class="inline-block p-top-20">
+						<h4 class="text-uppercase heading-border-bottom">Latest Photos</h4>
+						<div id="img-carousel">
+							{% for gallery in site.data.galleries %}
+								{% for gallery_name in _galleries %}
+									{% if gallery_name == gallery.title %}
+										{% for image in gallery.images %}
+											{% assign title = image.title %}
+											{% unless image.title %}
+												{% assign title = image.url | split: '_' | last | split: '.' | first | replace: '--', ', ' | replace: '-', ' ' | replace: '/', ' ' %}
+											{% endunless %}
+							<div class="item">
+								<a title="{{ title }}" href="{{site.gallery-image-url }}/{{ gallery.directory }}/{{ image.url }}">
+									<img src="{{site.gallery-image-url }}/{{ gallery.directory }}/{{ gallery.thumb }}/{{ image.url }}" alt="{{ title }}">
+								</a>
+							</div>
+										{% endfor %}
+										{% break %}
+									{% endif %}
+								{% endfor %}
+							{% endfor %}
+						</div>
+					</div>
+					<div class="social-link circle dark" style="float:right">Follow Us <a href="https://instagram.com/gdaytravelers"><i class="fa fa-instagram"></i></a></div>
+					<!--<h5 style="float:right"><a href="https://instagram.com/gdaytravelers"><i class="fa fa-instagram"></i>  Follow on Instagram</a></h5>-->
+				</div>
+			</div>
+			<!-- instagram feed -->
+			{% endif %}
+			{% endif%}

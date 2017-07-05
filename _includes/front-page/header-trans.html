@@ -1,7 +1,7 @@
         <!--header start-->
         <header class="l-header l-header_overlay">
-            <div class="l-navbar l-navbar_expand l-navbar_t-semi-trans js-navbar-sticky">
-                <div class="container">
+            <div class="l-navbar l-navbar_expand l-navbar_t-dark-trans js-navbar-sticky">
+                <div class="container">            
                     <nav class="menuzord js-primary-navigation" role="navigation" aria-label="Primary Navigation">
 
                         <!--logo start-->
@@ -11,7 +11,7 @@
                         <!--logo end-->
 
                         <!--mega menu start - pull-right op-nav light c-nav_s-standard -->
-                        <ul class="menuzord-menu menuzord-right op-nav c-nav_s-bg">
+                        <ul class="menuzord-menu menuzord-right op-nav c-nav_s-standard">
                             {% for link in nav %}
                             <li class="{%if link.class %}{{ link.class }}{% endif %}"{% if link.additional %} {{ link.additional }}><a href="javascript:void(0)"{% else %}><a href="{{link.url}}"{% endif %} title="{{link.description}}">{{link.title}}</a>
                                 {% if link.dropdown %}
@@ -33,14 +33,6 @@
                                 {% endif %}
                             </li>  
                             {%endfor%}
-                            <li>
-                                <a href="javascript:void(0)"><i class="fa fa-search"></i> Search</a>
-                                <div class="megamenu megamenu-quarter-width navbar-search">
-                                    <form role="searchform">
-                                        <input type="text" class="form-control" placeholder="Search Here">
-                                    </form>
-                                </div>
-                            </li>
                         </ul>
                     </nav>
                 </div>

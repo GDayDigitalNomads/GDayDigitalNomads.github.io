@@ -1,0 +1,16 @@
+                                    
+                                    <div class="inline-block">
+
+                                        <div class="widget-tags">
+                                            <h6 class="text-uppercase">Tags </h6>
+                                            {% assign sorted_tags = page.tags | sort %}
+                                            {%for tag in sorted_tags %}
+                                            <a href="">{{ tag }}</a>
+                                            {% endfor%}
+                                        </div>
+                                    </div>
+
+                                    <div class="clearfix inline-block m-top-50 m-bot-50">
+                                        <h6 class="text-uppercase">Share this Post </h6>
+                                        <div class="addthis_inline_share_toolbox"></div>
+                                    </div>

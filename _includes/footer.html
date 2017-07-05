@@ -10,11 +10,9 @@
                         <div class="text-center">
                             <h3 class="light-txt">we <span class="theme-color">love</span> new friends</h3>
                             <div class="social-link circle m-top-50 m-bot-50">
-                                <a href="#"><i class="fa fa-facebook"></i></a>
-                                <a href="#"><i class="fa fa-twitter"></i></a>
-                                <a href="#"><i class="fa fa-dribbble"></i></a>
-                                <a href="#"><i class="fa fa-google-plus"></i></a>
-                                <a href="#"><i class="fa fa-behance"></i></a>
+                                {% for soci in site.social %}
+                                <a href="{{ soci.url }}"><i class="fa fa-{{ soci.title }}"></i></a>
+                                {% endfor %}
                             </div>                            
                         </div>
                     </div>
@@ -47,7 +45,7 @@
                                             <div class="help-block with-errors"></div>
                                         </div>
                                         <div class="form-group">
-                                            <input type="phone" name="phone" class=" form-control" placeholder="Phone" maxlength="100" required data-error="Invalid phone number!">
+                                            <input type="phone" name="phone" class=" form-control" placeholder="Phone" maxlength="20">
                                             <div class="help-block with-errors"></div>
                                         </div>                                        
                                         <div class="form-group">
@@ -57,15 +55,18 @@
 
                                     <div class="col-md-6 form-group">
                                         <div class="form-group">
-                                            <textarea name="comments" class="cmnt-text form-control" placeholder="Comments" maxlength="400"></textarea>
+                                            <textarea name="comments" class="cmnt-text form-control" placeholder="Comments" maxlength="500"></textarea>
                                         </div>
+                                        <div id="captcha" class="g-recaptcha" data-sitekey="6LfoSycUAAAAAPJ-YaW7iR0vxjmusqbVNkVpTust" required data-error="Don't forget the Captcha"></div>
+                                    </div>
+                                    <div class="col-md-12">
                                         <div class="form-group full-width">
-                                            <button type="submit" class="btn btn-small btn-dark-solid ">Send Message</button>
+                                            <button type="submit" class="g-recaptcha btn btn-small btn-dark-solid" data-sitekey="6LfoSycUAAAAAPJ-YaW7iR0vxjmusqbVNkVpTust">Send Message</button>
                                         </div>
                                     </div>
-
                                 </div>
-
+                                <input type="hidden" name="url" value="{{ page.url}}">
+                                <input id="user-meta" type="hidden" name="user-meta" val=''>
                             </form>
 
                         </div>
@@ -80,7 +81,7 @@
         <!--footer start -->
         <footer id="footer" class=" dark text-center footer-6">
             <div class="container-">
-                <div class="copyright-sub-title text-uppercase border-top m-bot-30">
+                <div class="copyright-sub-title text-uppercase border-top m-bot-50">
                     &copy; Copyright 2017 "G'Day Digital Nomads". All right reserved
                 </div>
             </div>

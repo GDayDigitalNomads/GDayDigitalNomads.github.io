@@ -1,0 +1,264 @@
+{% assign excluded = page.id | append: ',' %}
+
+                        <div class="col-md-4">
+
+                            <!--related post widget-->
+                            {% assign total = 2 %}
+                            {% assign counter = 0 %}
+                            {% assign related_postids = '' %}
+                            {% for post in site.posts %}
+                            {% unless excluded contains post.id %}
+                                {% assign post_cats = post.categories | join : ',' | downcase %}
+                                {% for this_cat in page.categories %}
+                                    {% assign page_cat = this_cat | downcase | strip %}    
+                                    {% if post_cats contains page_cat %}
+                                        {% assign counter = counter | plus: 1  %}
+                                        {% assign related_postids = related_postids | append: post.id | append: ','  %}
+                                        {% break %}
+                                    {% endif %}
+                                {% endfor %}
+                                {% if counter >= total %}
+                                    {% break %}
+                                {% endif %}
+                            {% endunless%}
+                            {% endfor %}
+                            
+                            {% if related_postids != '' %}
+                            {% assign excluded = excluded | append: related_postids %}
+                            <!--related articles widget-->                            
+                            <div class="widget m-bot-0">
+                                <div class="heading-title-alt text-left heading-border-bottom">
+                                    <h4 class="text-uppercase">Related Articles</h4>
+                                </div>
+                                <div class="post-list">
+                                {% for post in site.posts %}
+                                {% if related_postids contains post.id %}
+                                    <div class="post-single">
+                                        {% assign thumb = '' %}
+                                        {% if post.images %}
+                                            {% for img in post.images %}
+                                                {% if img.type =='related' %}
+                                                    {% assign thumb = img %}
+                                                    {% break %}
+                                                {% elsif img.type =='thumbnail' %}
+                                                    {% assign thumb = img %}
+                                                {% endif %}
+                                            {% endfor %}
+                                        {% endif %}
+                                        <ul class="post-cat">
+                                            {% for cat in post.categories %}
+                                            <li><a href="/blog/{{ cat | downcase | replace: ' ','-' }}/">{{ cat }}</a></li>
+                                            {% endfor %}
+                                        </ul>                                        
+                                        {% if thumb != ''%}
+                                        <div class="post-img">
+                                            <a href="{{ post.url }}" class="sharethis">
+                                                <img src="{{ site.post-image-url }}/{{ thumb.url }}" alt="{{ post.slug }}">
+                                            </a>
+                                        </div>
+                                        {% endif %}
+                                        <div class="post-desk p-top-20 {% if counter >= total %}p-bot-20{% else %}p-bot-0{% endif %}">
+                                            <h4 class="text-uppercase">
+                                                <a href="{{ post.url }}">{{ post.title }}</a>
+                                            </h4>
+                                            <div class="date m-bot-10">
+                                                <a href="/profiles/{{post.author | downcase | replace: ' ', '-'}}.html" class="author">{{post.author | downcase }}</a> {{ post.date | date_to_long_string }}
+                                            </div>
+                                            {% if post.description %}
+                                            <p>{{ post.description }}&nbsp;&nbsp;&nbsp;&nbsp;<a href="{{ post.url }}" class="p-read-more">Read More </a></p>
+
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                    {% endif %}
+                                    {% endfor %}  
+                                </div>                                                         
+                            </div>
+                            <!--related articles-->
+                            {% endif %}
+
+
+                            {% assign total = 2 %}
+                            {% assign counter = 0 %}
+                            {% assign featured_postids = '' %}
+                            
+                            {% for post in site.posts %}
+                                {% unless excluded contains post.id %}
+                                    {% assign post_tags = post.tags | join : ',' | downcase %}
+                                    {% if post_tags contains 'featured' %}
+                                        {% assign counter = counter | plus: 1  %}
+                                        {% assign featured_postids = featured_postids | append: post.id | append: ','  %}
+                                    {% endif %}
+                                    {% if counter >= total %}
+                                        {% break %}
+                                    {% endif %}
+                                {% endunless%}
+                            {% endfor %}
+
+                            {% if featured_postids != '' %}
+                            {% assign excluded = excluded | append: featured_postids  %}
+                            <div class="widget m-bot-0">
+                                <div class="heading-title-alt text-left heading-border-bottom">
+                                    <h4 class="text-uppercase">featured Articles</h4>
+                                </div>
+                                <div class="post-list">
+                                {% for post in site.posts %}
+                                {% if featured_postids contains post.id %}
+                                    <div class="post-single">
+                                        {% assign thumb = '' %}
+                                        {% if post.images %}
+                                            {% for img in post.images %}
+                                                {% if img.type =='related' %}
+                                                    {% assign thumb = img %}
+                                                    {% break %}
+                                                {% elsif img.type =='thumbnail' %}
+                                                    {% assign thumb = img %}
+                                                {% endif %}
+                                            {% endfor %}
+                                        {% endif %}
+                                        <ul class="post-cat">
+                                            {% for cat in post.categories %}
+                                            <li><a href="/blog/{{ cat | downcase | replace: ' ','-' }}/">{{ cat }}</a></li>
+                                            {% endfor %}
+                                        </ul>                                        
+                                        {% if thumb != ''%}
+                                        <div class="post-img">
+                                            <a href="{{ post.url }}" class="sharethis">
+                                                <img src="{{ site.post-image-url }}/{{ thumb.url }}" alt="{{ post.slug }}">
+                                            </a>
+                                        </div>
+                                        {% endif %}
+                                        <div class="post-desk p-top-20 {% if counter >= total %}p-bot-20{% else %}p-bot-0{% endif %}">
+                                            <h4 class="text-uppercase">
+                                                <a href="{{ post.url }}">{{ post.title }}</a>
+                                            </h4>
+                                            <div class="date m-bot-10">
+                                                <a href="/profiles/{{post.author | downcase | replace: ' ', '-'}}.html" class="author">{{post.author | downcase }}</a> {{ post.date | date_to_long_string }}
+                                            </div>
+                                            {% if post.description %}
+                                            <p>{{ post.description }}&nbsp;&nbsp;&nbsp;&nbsp;<a href="{{ post.url }}" class="p-read-more">Read More </a></p>
+
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                    {% endif %}
+                                    {% endfor %}  
+                                </div>                                                         
+                            </div>
+                            <!--featured articles-->
+                            {% endif %}
+
+                            {% assign total = 10 %}
+                            {% assign counter = 0 %}
+                            {% assign latest_postids = '' %}
+                            
+                            {% for post in site.posts %}
+                                {% unless excluded contains post.id %}
+                                    {% assign counter = counter | plus: 1  %}
+                                    {% assign latest_postids = latest_postids | append: post.id | append: ',' %}
+                                    {% if counter >= total %}
+                                        {% break %}
+                                    {% endif %}
+                                {% endunless%}
+                            {% endfor %}
+
+
+                            {% if latest_postids != '' %}
+                            {% assign excluded = excluded | append: latest_postids  %}
+                            <!--latest post widget-->
+                            <div class="widget">
+                                <div class="heading-title-alt text-left heading-border-bottom">
+                                    <h6 class="text-uppercase">latest Articles</h6>
+                                </div>
+                                <ul class="widget-latest-post">
+                                    {% for post in site.posts %}
+                                    {% if latest_postids contains post.id %}
+                                        {% assign thumb = '' %}
+                                        {% if post.images %}
+                                            {% for img in post.images %}
+                                                {% if img.type =='related' %}
+                                                    {% assign thumb = img %}
+                                                {% elsif img.type =='thumbnail' %}
+                                                    {% assign thumb = img %}
+                                                    {% break %}
+                                                {% endif %}
+                                            {% endfor %}
+                                        {% endif %}
+
+                                    <li>
+                                        {% if thumb != '' %}
+                                        <div class="thumb">
+                                            <a href="{{ post.url }}">
+                                                <img src="{{ site.post-image-url }}/{{ thumb.url }}" alt="{{ thumb.description }}" />
+                                            </a>
+                                        </div>
+                                        {% endif %}
+                                        <div class="w-desk">
+                                            <a href="{{ post.url }}">{{ post.title }}</a>
+                                            {% if post.alt-title %}
+                                            <a class="subtitle" href="{{ post.url }}">{{ post.alt-title }}</a>
+                                            {% endif %}
+                                            {{ post.date | date_to_long_string }}
+                                        </div>
+                                    </li>
+                                    {% endif %}
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                            <!--latest post widget-->
+                            {% endif %}
+
+                            <!--category widget-->
+                            <div class="widget">
+                                <div class="heading-title-alt text-left heading-border-bottom">
+                                    <h6 class="text-uppercase">categories</h6>
+                                </div>
+                                <ul class="widget-category">
+                                    {% for cat in site.data.category-mapping %}
+                                    <li class="mbot m-bot-10"><a href="{{ cat.url }}">{{ cat.title | capitalize }}</a></li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                         
+                            {% assign all_tags = site.data.tags | join: ',' |  downcase %}
+                            {% assign page_tags = page.tags | join ',' | downcase %}
+                            {% for post in site.posts %}
+                                {% assign post_tags = post.tags | join: ',' | downcase %}
+                                {% assign all_tags = all_tags | append: ',' | append: post_tags %}
+                            {% endfor%}
+                            {% assign tags = all_tags | split : ',' | uniq %}
+                            
+                            <!--tags widget-->
+                            <div class="widget">
+                                <div class="heading-title-alt text-left heading-border-bottom">
+                                    <h6 class="text-uppercase">tag cloud</h6>
+                                </div>
+                                <div class="widget-tags">
+                                    {% for tag in tags %}
+                                    <a href="">{{ tag | capitalize }}</a>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                            <!--tags widget-->
+
+                            <!--author widget-->
+                            {% for profile in site.profiles %}
+                            {% if page.author == profile.name %}
+                            <div class="widget">
+                                <div class="heading-title-alt text-left heading-border-bottom">
+                                    <h6 class="text-uppercase">about author</h6>
+                                </div>
+                                <div class="full-width avatar m-bot-20">
+                                    <img src="{{ site.static-image-url }}/profiles/{{ profile.name | downcase | replace: ' ', '-' }}.jpg" alt="{{ profile.name }}" />
+                                </div>
+                                <p>{{ profile.summary}}</p>
+
+                                <span>{{ profile.name }}</span>
+                                <span><a href="{{ profile.url }}" class="btn btn-small btn-theme-border-color " style="float: right;"> Read More </a></span>
+                            </div>
+                            {% break %}
+                            {% endif%}
+                            {% endfor %}
+                            <!--author widget-->                            
+
+                        </div>

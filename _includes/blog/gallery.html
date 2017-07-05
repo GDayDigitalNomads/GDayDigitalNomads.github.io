@@ -1,0 +1,61 @@
+
+{% assign images = page.gallery.images %}
+{% assign directory = page.gallery.directory %}
+{% assign site_gallery = page.gallery %}
+
+{% unless page.gallery.images %}
+    {% for gallery in site.data.galleries %}
+        {% if page.gallery.sitegallery == gallery.title %}
+            {% assign images = gallery.images %}
+            {% assign directory = gallery.directory %}
+            {% assign site_gallery = gallery %}
+        {% break %}
+        {% endif %}
+    {% endfor %}
+{% endunless %}
+
+{% if page.gallery.thumb %}
+    {% if page.gallery.thumb != '' %}
+        {% assign thumb = page.gallery.thumb %}
+    {% else%}
+        {% assign thumb = site_gallery.thumb %}
+    {% endif %}
+
+                            <div class="full-width  m-bot-50">
+                                    <div class="post-slider-thumb post-img text-center">
+                                        <ul class="slides">
+                                            {% for image in images %}
+                                                {% assign title = image.title %}
+                                                {% unless image.title %}
+                                                    {% assign title = image.url | split: '_' | last | split: '.' | first | replace: '--', ', ' | replace: '-', ' ' | replace: '/', ' ' %}
+                                                {% endunless %}
+                                                <li data-thumb="{{ site.gallery-image-url }}/{{ directory }}/{{ thumb }}/{{ image.url }}">
+                                                    <a href="#" title="{{ title }}">
+                                                        <img src="{{ site.gallery-image-url }}/{{ directory }}/{{ image.url }}" alt="{{ title }}">
+                                                    </a>
+                                                </li>
+                                            {% endfor %}
+                                        </ul>
+                                    </div>
+                            </div>
+
+{% else %}
+                            <div class="full-width m-bot-30">
+                                <div class="post-slider post-img text-center">
+                                    <ul class="slides">
+                                        {% for image in images %}
+                                            {% assign title = image.title %}
+                                            {% unless image.title %}
+                                                {% assign title = image.url | split: '_' | last | split: '.' | first | replace: '--', ', ' | replace: '-', ' ' | replace: '/', ' ' %}
+                                            {% endunless %}                                        
+                                            <li>
+                                                <a href="#" title="{{ title }}">
+                                                    <img src="{{ site.gallery-image-url }}/{{ directory }}/{{ image.url }}" alt="{{ title }}">
+                                                </a>
+                                            </li>
+                                        {% endfor %}
+                                    </ul>
+                                </div>
+                            </div>
+
+{% endif %}

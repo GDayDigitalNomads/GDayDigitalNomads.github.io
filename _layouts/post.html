@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{% include head.html %}
+
+<body>
+
+    <!--  preloader start
+    <div id="tb-preloader">
+        <div class="tb-preloader-wave"></div>
+    </div>
+    <!-- preloader end -->
+
+    <div class="wrapper">
+    {% assign nav = site.data.navigation %}
+    {% include header-black.html %}
+
+
+    {% if page.video-html5 and page.video-html5 != false %}
+        {% include blog/banner-video-html5.html %}        
+    {% elsif page.slider %}
+        {% include blog/banner-slider.html %} 
+    {% elsif page.images %}
+        {% for image in page.images %}
+            {% if image.type == 'fullwidth' %}    
+                {% include blog/banner-image.html %}
+                {% break %}
+            {% endif %}
+        {% endfor %}
+    {% endif %}
+
+    {% include breadcrumb.html %}
+
+    <section class="body-content">
+        <div class="page-content-sm">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+
+                    {% if page.images %}
+                        {% for image in page.images %}
+                            {% if image.type == 'large' %}    
+                                {% include blog/image.html %}
+                            {% endif %}
+                        {% endfor %}
+                    {% endif %}
+
+                    {% if page.gallery and page.gallery.type == 'large' %}
+                        {% include blog/gallery.html %}
+                    {% endif %}
+
+                    </div>
+                    <div class="col-md-8">
+                        <!--classic image post-->
+                        <div class="blog-classic">
+                            <div class="blog-post">
+
+                                {% if page.images %}
+                                    {% for image in page.images %}
+                                        {% if image.type == 'feature' %} 
+                                            <!-- Feature Image here -->
+                                            {% include blog/image.html %}
+                                        {% endif %}
+                                    {% endfor %}
+                                {% endif %}
+
+                                {% if page.gallery and page.gallery.type == 'feature' %}
+                                    <!-- Feature Gallery here -->
+                                    {% include blog/gallery.html %}
+                                {% endif %}                                
+
+                                {% if page.video-embedded and page.video-embedded.url %}
+                                    {% assign video = page.video-embedded %}
+                                    {% include blog/video-embedded.html %}
+                                {% endif %}
+
+                                {% include blog/title.html %}
+
+                                {{ content }}
+                                
+                                {% include blog/close.html %}
+                                {% if page.comments and page.comments == true %}
+                                    {% include blog/comments.html %}
+                                {% endif %}
+
+                                {% include blog/related-posts.html %}
+
+                            </div>
+                        </div>
+                    </div>
+
+                    {% include blog/sidebar.html %}
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {% include footer.html %}
+
+    </div>
+    <!-- end wrapper -->
+
+  {% include scripts.html %}
+
+</body>
+</html>

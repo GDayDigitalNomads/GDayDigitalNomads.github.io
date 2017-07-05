@@ -1,0 +1,561 @@
+---
+name: Audrey Cassim
+social:
+  - title: facebook
+    url: https://www.facebook.com/audrey.c.mateo
+  - title: twitter
+    url: https://twitter.com/g_nomads
+  - title: instagram
+    url: https://instagram.com/gdaytravelers
+  - title: youtube
+    url: https://youtube.com/channel/UCsDgPi0tRpAv6YIMbzgIdnA    
+  - title: linkedin
+    url: https://www.linkedin.com/in/audreycassim/        
+  - title: github
+    url: https://github.com/ladytrumpet1
+---
+
+
+        <!--hero profile-->
+        <section class="page-title about-me-background post-profile dark" id="about-me">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 col-md-offset-6">
+                        <h1 class="text-uppercase theme-color">{{ page.name }}</h1>
+                        <span class="text-uppercase light-txt">Digital Nomad. Yogi Traveler.</span>
+                        <div class="m-top-30">
+                            <a data-scroll href="#contact" class="contactsubmit btn btn-small btn-rounded btn-theme-color"subject-line="Hi, I'd like to contact Audrey Cassim"> CONTACT ME </a>
+                            <a data-scroll href="#contact" class="contactsubmit btn btn-small btn-rounded btn-light-border" subject-line="Hi, I'd like to view your CV"> CV ENQUIRY</a>
+                        </div>
+                        {% if page.social %}
+                        <div class="social-link circle m-top-50 m-bot-50">
+                            {% for soci in page.social %}
+                            <a href="{{ soci.url }}"><i class="fa fa-{{ soci.title }}"></i></a>
+                            {% endfor %}
+                        </div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            <span class="text-uppercase"  style="position: absolute; bottom: 20px; right: 20px;">Photo: Blue Mountains, NSW Australia</span>
+        </section>
+        <!--page title end-->
+
+
+        <!-- about me -->
+      <section id= "about-audrey" class="body-content gray-bg" >
+             <div class="container">
+                    <div class="row page-content p-bot-0">
+                        <div class="post-list-aside">
+                            <div class="post-single">
+                                <div class="col-md-6 b-bot-20">
+                                    <div class="post-slider post-img text-center">
+                                        <ul class="slides">
+                                            <li data-thumb="{{ site.static-image-url }}/profiles/post-pic1.jpg">
+                                                <a href="javascript:;" title="Freshness Photo">
+                                                    <img src="{{ site.static-image-url }}/profiles/post-pic1.jpg" alt="">
+                                                </a>
+                                            </li>
+                                            <li data-thumb="{{ site.static-image-url }}/profiles/post-pic2.jpg">
+                                                <a href="javascript:;" title="Awesome Lightbox">
+                                                    <img src="{{ site.static-image-url }}/profiles/post-pic2.jpg" alt="">
+                                                </a>
+                                            </li>
+                                            <li data-thumb="{{ site.static-image-url }}/profiles/post-pic3.png">
+                                                <a href="javascript:;" title="Massive UI Components">
+                                                    <img src="{{ site.static-image-url }}/profiles/post-pic3.png" alt="">
+                                                </a>
+                                            </li>
+                                            <li data-thumb="{{ site.static-image-url }}/profiles/post-pic4.jpg">
+                                                <a href="javascript:;" title="Massive UI Components">
+                                                    <img src="{{ site.static-image-url }}/profiles/post-pic4.jpg" alt="">
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="post-desk p-top-0">
+                                        <div class="m-bot-10">
+                                            <h2 class="text-uppercase theme-color m-bot-0">who am i</h2>
+                                            <h4 class="text-uppercase">I am a traveler and a digital yogi.</h4>
+                                        </div>
+
+                                        <p>
+                                             I always wanted to travel since i received my first globe at the age of 8 years old. As Phileas Foog, I wished to travel around the world but not only in 80 days. After my first trip in London by myself when i was 18, i knew i can do it... many years later, i still have a lot to visit and that's make me happy.
+                                        <p>  Travel for me is a slow journey to discover others and myself. I love spend time to observe the nature, eat with locals and dancing around fire camp.</p>
+                                        </p>
+                                        <p> What is the most important for me? </p>
+
+                                        <ul class="m-bot-0 circle-list inline-block">
+                                            <li>
+                                                Enthusiam, i believe positive attitude attract positive life.
+                                            </li>
+                                            <li>
+                                                 Curiosity, never stop to learn, i am a learnerholic.
+                                            </li>
+                                            <li>
+                                                Inconditional love, my goal everyday.
+                                            </li>
+
+                                        </ul>
+                                    </div>                                
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+        </section>
+
+
+        <section id="latest-adventures" class="body-content p-top-0 gray-bg">
+            <div class="page-content-sm p-top-0 p-bot-0">
+                <div class="container">
+
+            {% assign _galleries = 'top100' | split: ',' %}
+            {% include front-page/image-carousel.html %}
+
+                </div>
+            </div>
+        </section>
+
+
+
+        <!-- service -->
+        <section id="offering-audrey" class="body-content">
+            <div class="page-content-sm ">
+                <div class="container">
+                    <!--feature border box start-->
+                    <div class="heading-title border-short-bottom text-center">
+                        <h3 class="text-uppercase">What can i do for you ? </h3>
+                        <div class="half-txt">Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus. Nam libero tempore</div>
+                    </div>
+                    <div class="m-top-20 inline-block">
+                            <div class="row ">
+                                <div class="col-md-4">
+                                    <div class="featured-item feature-bg-box  text-center m-bot-50">
+                                        <div class="icon">
+                                           <img src="{{ site.static-image-url }}/profiles/yoga-icon.png" style="width:60px;">
+                                        </div>
+                                        <div class="title text-uppercase">
+                                            <h4>Yoga instructor</h4>
+                                        </div>
+                                        <div class="desc">
+                                            Ringilla augue at maximus vestibulum. Nam pulvinar vitae neque et porttitor. Praesent sed nisi eleifend.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="featured-item feature-bg-box  text-center m-bot-50">
+                                        <div class="icon">
+                                             <img src="{{ site.static-image-url }}/profiles/pineapple-icon.png" style="width:60px;">
+                                        </div>
+                                        <div class="title text-uppercase">
+                                            <h4>Fitness / health coach</h4>
+                                        </div>
+                                        <div class="desc">
+                                            Personal session to learn how to be savvy, sexy and heathy :) 
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="featured-item feature-bg-box text-center m-bot-50">
+                                        <div class="icon">
+                                            <img src="{{ site.static-image-url }}/profiles/spine-icon.png" style="width:60px;">
+                                        </div>
+                                        <div class="title text-uppercase">
+                                            <h4>Cranio Sacral Therapy</h4>
+                                        </div>
+                                        <div class="desc">
+                                            Certified by Surrender method. I can offer you a deep relaxation combine differents traditionals technics. 
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row ">                            
+                                <div class="col-md-4" >
+                                    <div class="featured-item feature-bg-box  text-center m-bot-50">
+                                        <div class="icon">
+                                            <img src="{{ site.static-image-url }}/profiles/earth-icon.png" style="width:60px;">
+                                        </div>
+                                        <div class="title text-uppercase">
+                                            <h4>Retreat</h4>
+                                        </div>
+                                        <div class="desc">
+                                            Comming soon. Want to be a digital nomad and learn how to code, join us with G'Day Digital Nomads for 10 days coding and yoga. 
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4" >
+                                    <div class="featured-item feature-bg-box  text-center m-bot-50">
+                                        <div class="icon">
+                                            <img src="{{ site.static-image-url }}/profiles/webdev-icon.png" style="width:60px;">
+                                        </div>
+                                        <div class="title text-uppercase">
+                                            <h4>Web developpment</h4>
+                                        </div>
+                                        <div class="desc">
+                                            Junior web developper, html css and Javascript  
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4" >
+                                    <div class="featured-item feature-bg-box  text-center  m-bot-50">
+                                        <div class="icon">
+                                            <img src="{{ site.static-image-url }}/profiles/plane-icon.png" style="width:60px;">
+                                        </div>
+                                        <div class="title text-uppercase">
+                                            <h4>Travel Adivisor</h4>
+                                        </div>
+                                        <div class="desc">
+                                            Ringilla augue at maximus vestibulum. Nam pulvinar vitae neque et porttitor. Praesent sed nisi eleifend.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+
+                    <!--feature border box end-->
+
+                    <!--feature border box start-->
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="widget">
+                                <div class="heading-title-alt heading-border-bottom text-left">
+                                    <h5 class="text-uppercase">Personal Skillsets</h5>
+                                </div>                                
+                                <div class="widget-tags text-center">
+                                                                                                           
+                                    <a href="">Hatha Yoga</a>
+                                    <a href="">Fitness</a>
+                                    <a href="">Group Exercice in Music</a>
+                                    <a href="">Swedish Fit</a>
+                                    <a href="">Surrender Method</a>
+                                    <a href="">Cranio Sacral Therapy</a>
+                                    <a href="">Travel Expertise</a>
+                                    <a href="">Management</a>
+                                    <a href="">Team Management</a>
+                                    <a href="">Project Management</a>
+                                    <a href="">Sourcing</a>
+                                    <a href="">Recruiting</a>
+                                    <a href="">Interviews</a>
+                                    <a href="">Technical Recruiting</a>
+                                    <a href="">Talent Acquisition</a>
+                                    <a href="">Project Coordination</a>
+                                    <a href="">Development</a>
+                                    <a href="">Social Networking</a>
+                                    <a href="">Coordination</a>
+                                    <a href="">French</a>
+                                    <a href="">English</a>
+                                    <a href="">Spanish</a>
+                                    <a href="">Portuguese</a>
+                                    <a href="">HTML</a>
+                                    <a href="">CSS</a>
+                                    <a href="">Javascript</a>
+                                    <a href="">GitHub</a>
+                                    <a href="">Jquery</a>
+                                    <a href="">Web Development</a>
+                                    <a href="">Web Design</a>
+                                    <a href="">Photoshop</a>
+                                    <a href="">Illustrator</a>
+                                    <a href="">Photography</a>
+                                    <a href="">Musicology</a> 
+                                    <a href="">Antropology</a>  
+                                    <a href="">Trumpet</a>         
+                                    <a href="">Guitar</a>                       
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Yoga -->
+        <section class="body-content" >
+            <div class="page-content-sm gray-bg">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="heading-title-alt text-center featured-item">
+                                <div class="icon bottom-border theme-color">
+                                   <img src="{{ site.static-image-url }}/profiles/meditation.png" Style="width:auto; height:100px;">
+                                </div>
+                                <div class="title text-uppercase">
+                                    <h3 class="text-uppercase theme-color">Yoga classes</h3>
+                                </div>
+                                <p class="half-txt p-bot-0">Om śāntiḥ śāntiḥ śāntiḥ</p>
+                            </div>
+                        </div>
+                    </div>            
+                    <div class="row">
+                        <div class="col-md-6">         
+                            <div class="featured-item feature-outline m-bot-20 wow fadeInLeft">
+                                <div class="icon">
+                                     <img src="{{ site.static-image-url }}/profiles/rys-200.png">
+                                </div>
+                                <div class="title-pink">
+                                    <h4 style="color:#818387;">200 hours YTT certified by Alliance Yoga</h4>
+                                </div>
+                                 <div class="desc"> Training followed with Nepal Yoga Academy, 2017</div>
+                            </div>    
+                            <div class="featured-item feature-outline m-bot-20 wow fadeInLeft">
+                                <div class="icon">
+                                    <img src="{{ site.static-image-url }}/profiles/earth-icon-black.png">
+                                </div>
+                                <div class="title-pink">
+                                    <h4>10 years practise all around the world</h4>
+                                </div>
+                                 <div class="desc">France, England, Spain, India, Cambodia, Vietnam, Australia, USA...</div>
+                            </div>                        
+                            <div class="featured-item feature-outline m-bot-40 wow fadeInLeft">
+                                <div class="icon">
+                                    <img src="{{ site.static-image-url }}/profiles/yoga-pose-icon.png">
+                                </div>
+                                <div class="title-pink">
+                                    <h4>Hatha Yoga, Ashtanga Yoga</h4>
+                                </div>
+                                <div class="desc"></div>
+                            </div>    
+                            <div class="featured-item feature-outline m-bot-40 wow fadeInLeft">
+                                <div class="icon">
+                                   <img src="{{ site.static-image-url }}/profiles/om-logo.png">
+                                </div>
+                                <div class="title-pink">
+                                    <h4>Pranayama(breathing), Dhyan (meditations)</h4>
+                                </div>
+                                <div class="desc">Mantra singing, Vipassana</div>
+                            </div>                                                      
+                        </div>
+                        <div class="col-md-6">
+                            <div class="responsive-img wow fadeInRightBig">
+                                <img src="{{ site.static-image-url }}/profiles/audrey-yoga.jpg" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--feature--> 
+        </section>
+        
+       <!-- timeline-->
+           <section class="body-content ">
+
+             <div class="page-content-sm p-bot-0">
+                <div class="container">
+                    <div class="row">
+                        <div class="heading-title text-center">
+                            <h3 class="text-uppercase">Timeline of a happy life</h3>
+                        </div>
+
+                        <div class="col-md-12">
+                            <!--time line dark -->
+                            <div class="timeline">
+                                <article class="timeline-item alt">
+                                    <div class="timeline-desk">
+                                        <div class="panel">
+                                            <div class="panel-body">
+                                                <span class="timeline-icon">
+                                                   <img src="{{ site.static-image-url}}/profiles/Icon-Chakra7.png" style= "position:relative; bottom:5px; ">
+
+                                                </span>
+                                                <span class="timeline-date">2017</span>
+                                                <h1 class="text-uppercase">200H Yoga Teacher Training Certification</h1>
+                                                <p><a href="http://www.nepalyogaacademy.com/"> Nepal Yoga Academy</a></p>
+                                                <p>2017</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </article>
+                                <article class="timeline-item ">
+                                    <div class="timeline-desk">
+                                        <div class="panel">
+                                            <div class="panel-body">
+                                                <span class="timeline-icon">
+                                                   <img src="{{ site.static-image-url}}/profiles/Icon-Chakra6.png" style= "position:relative; bottom:5px;">
+                                                </span>
+                                                <span class="timeline-date">2015-2017</span>
+                                                <h1 class="text-uppercase">Freelancer </h1>
+                                                <p>Digital Yogi Nomad</p>
+                                                <p>2015-NOW</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </article>
+                                <article class="timeline-item alt">
+                                    <div class="timeline-desk">
+                                        <div class="panel">
+                                            <div class="panel-body">
+                                                <span class="timeline-icon">
+                                                    <img src="{{ site.static-image-url}}/profiles/Icon-Chakra5.png" style= "position:relative; bottom:5px; ">
+
+                                                </span>
+                                                <span class="timeline-date">2010</span>
+                                                <h1 class="text-uppercase">Cranio Sacral Certification</h1>
+                                                <p><a href="http://www.methodesurrender.fr/index.html">Surrender Method</a></p>
+                                                <p>2013</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </article>
+                                <article class="timeline-item ">
+                                    <div class="timeline-desk">
+                                        <div class="panel">
+                                            <div class="panel-body">
+                                                <span class="timeline-icon">
+                                                   <img src="{{ site.static-image-url}}/profiles/Icon-Chakra4.png" style= "position:relative; bottom:5px; ">
+
+                                                </span>
+                                                <span class="timeline-date" style="color:black;">2011-2015</span>
+                                                <h1 class="text-uppercase">Coordinator HR Development</h1>
+                                                <p><a href="www.swedishfit.com">Swedish Fit</a></p>
+                                                <p>2011-2015</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </article>
+                                <article class="timeline-item alt">
+                                    <div class="timeline-desk">
+                                        <div class="panel">
+                                            <div class="panel-body">
+                                                <span class="timeline-icon">
+                                                  <img src="{{ site.static-image-url}}/profiles/Icon-Chakra3.png" style= "position:relative; bottom:5px; ">
+                                                </span>
+                                                <span class="timeline-date">2011</span>
+                                                <h1 class="text-uppercase">Fitness Instructor Certification</h1>
+                                                <p>Swedish Fit</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </article>
+                                <article class="timeline-item">
+                                    <div class="timeline-desk">
+                                        <div class="panel">
+                                            <div class="panel-body">
+                                                <span class="timeline-icon">
+                                                    <img src="{{ site.static-image-url}}/profiles/Icon-Chakra2.png" style= "position:relative; bottom:5px; ">
+
+                                                </span>
+                                                <span class="timeline-date">2011</span>
+                                                <h1 class="text-uppercase">IT Recruitment Consultant</h1>
+                                                <p>Nicholson International</p>
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                </article>
+                                <article class="timeline-item alt">
+                                    <div class="timeline-desk">
+                                        <div class="panel">
+                                            <div class="panel-body">
+                                                <span class="timeline-icon">
+                                                    <img src="{{ site.static-image-url}}/profiles/Icon-Chakra1.png" style= "position:relative; bottom:5px; ">
+                                                </span>
+                                                <span class="timeline-date">2007</span>
+                                                <h1 class="text-uppercase">Master Degree in Ethnomusicology</h1>
+                                                <p>University Paris VIII</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </article>
+                          
+
+                            </div>
+                            <!--time line dark -->
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        <!-- map -->
+        <section class="body-content" >
+            <!--feature -->
+            <div class="page-content-sm p-top-0">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="full-width">
+                                <img src="{{ site.static-image-url}}/profiles/worldtravel-audrey.png">
+                            </div>                        
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- testimonial -->
+        <section class="body-content gray-bg">
+            <div class="testimonial-parallax banner-para5">
+                <div class="page-content-sm">
+                    <div class="container">
+                        <div class="row">
+                        <div class="heading-title text-center">
+                            <h3 class="text-uppercase light-txt">TestimonialS</h3>
+                        </div>
+
+                            <div class="col-md-12">
+                                <!--testimonial start-->
+                                <div id="testimonial-4" class="text-center light-txt big-icon ">
+                                        
+                                    <div class="item">
+                                        <div class="testimonial-thumb">
+                                            <img class="img-circle" src="{{ site.static-image-url }}/testimonial/1.jpg" alt="">
+                                        </div>
+
+                                        <div class="content">
+                                            <p class="half-txt">
+                                                Nam nec dui dolor. Curabitur in laoreet erat. Nam nec dui dolor. Aliquam varius dolor nunc, interdum commodo justoporttitor vitae. Quisque fermentum purus.
+                                            </p>
+                                            <div class="testimonial-meta">
+                                                Anne Charlotte Vernier, London.
+                                                <span>ABC</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="testimonial-thumb">
+                                            
+                                                <img class="img-circle" src="{{ site.static-image-url}}/testimonial/anneChaVernier.jpg" alt="Customer Testimonails">
+                                            
+                                        </div>                                    
+                                        <div class="content">
+                                            <p class="half-txt">
+                                                Audrey is probably one of the most positive, energetic, smily and good-hearted gym instructor I have ever come across, every discipline taken together. When I was a member of the Swedish Fit in London, she has been of tremendous support in my steps through the path towards improving my well-being, both physically and emotionally. Audrey is also a great communicator who selflessly shares her passion, positiveness and enthusiasm for life both in words and actions.
+                                            </p>
+                                            <div class="testimonial-meta">
+                                                Anne Charlotte Vernier
+                                                <span>London</span>
+                                            </div>                                            
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="testimonial-thumb">
+                                                <img class="img-circle" src="{{ site.static-image-url}}/testimonial/3.jpg" alt="Customer Testimonails">
+                                        </div>                                    
+                                        <div class="content">
+                                            <p class="half-txt">
+                                                Nam nec dui dolor. Curabitur in laoreet erat. Nam nec dui dolor. Aliquam varius dolor nunc, interdum commodo justoporttitor vitae. Quisque fermentum purus.
+                                            </p>
+                                            <div class="testimonial-meta">
+                                                Martin Smith
+                                                <span>GEF</span>
+                                            </div>                                            
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--testimonial end-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+<!--  style=" display: block; width:auto; height: 700px; position:relative; left:60px;" -->
+
+
+
+

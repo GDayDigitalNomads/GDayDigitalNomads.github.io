@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{% include head.html %}
+
+<body>
+
+    <!--  preloader start
+    <div id="tb-preloader">
+        <div class="tb-preloader-wave"></div>
+    </div>
+    <!-- preloader end -->
+
+    <div class="wrapper">
+    {% assign nav = site.data.navigation %}
+    {% include header-black.html %}
+    
+    
+    {% if page.video-html5 and page.video-html5 != false %}
+        {% include blog/banner-video-html5.html %}        
+    {% elsif page.slider %}
+        {% include blog/banner-slider.html %}        
+    {% elsif page.image %}
+        {% assign image = page.image %}
+        {% include blog/banner-image.html %}
+    {% endif %}
+
+    <section class="body-content">
+
+  	    {{ content }}
+
+
+    </section>
+
+  	{% include footer.html %}
+	</div>
+	<!-- end wrapper -->
+
+  {% include scripts.html %}
+
+</body>
+</html>

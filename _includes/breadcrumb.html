@@ -1,25 +1,35 @@
         {% assign crumbs = page.url | remove:'/index.html' | split: '/' %}
         <!--page title start-->
-        <section class="page-title">
+        <section class="page-title mini-title">
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
-                        <h4 class="text-uppercase">{{ page.name }}</h4>
+                        <h4 class="text-uppercase">{{ page.title }}</h4>
                         <ol class="breadcrumb">
-                            <li><a href="/#">Home</a></li>
-                            {% for crumb in crumbs offset: 1 %}
-                            {% if forloop.last %}
-                            <li class="active">{{ page.title }}</li>
+                            {% if page.breadcrumb %}
+                                {% for crumb in page.breadcrumb %}
+                                    {% if crumb.url %}
+                                    <li{% if crumb.active %} class="active"{% endif %}><a href="{{ crumb.url }}/">{{ crumb.title }}</a></li>
+                                    {% else %}
+                                    <li{% if crumb.active %} class="active"{% endif %}>{{ crumb.title }}</li>
+                                    {% endif %}
+                                {% endfor %}
                             {% else %}
-                                {% if forloop.index == 1 %}
+
+                            <li><a href="/#">Home</a></li>
+                            {% for crumb in crumbs offset: 1 limit: 2 %}
+                            
+                            {% if forloop.index == 1 %}
                             <li><a href="/{{ crumb }}/">{{ crumb | replace:'-',' ' | remove:'.html'}}</a></li>
                             <!--A cheap hack - can only handle one level {{ forloop.index }} --- {{ forloop.index == '1' }} -->
-                                {% else %}
+                            {% else %}
                             <li>{{ crumb | replace:'-',' ' | remove:'.html'}}</li>
                             <!--A cheap hack - can only handle one level -->
-                                {% endif %}
                             {% endif %}
+
                             {% endfor %}
+                            <li class="active">{% if page.slug %}{{ page.slug }}{% else %}{{ page.title }}{% endif %}</li>
+                            {% endif %}
                         </ol>
                     </div>
                 </div>

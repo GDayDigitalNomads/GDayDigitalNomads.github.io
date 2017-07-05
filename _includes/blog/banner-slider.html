@@ -1,0 +1,23 @@
+<section class="body-content">
+        <!--hero section -->
+        <div id="owl-slider" class="owl-carousel vertical-align" style="{% if page.slider.height %} height: {{ page.slider.height }}!important{% else %} height: 600px{% endif %};">
+
+                {% for slide in page.slider.slides %}
+                <div class="container-fluid generic-slider" style="background-image: url('{{ site.image-url }}/{{ slide.url }}'); {% if page.slider.height %} height: {{ page.slider.height }}!important{% else %} height: 600px{% endif %};">
+                    <div class="container-mid">
+                        <div class="container">
+                            <div class="banner-box">
+                                        {%if slide.title %}<h1 class="text-uppercase m-bot-10 inline-block light-txt">{{ slide.title }}</h1>{% endif %}
+                                        {% if slide.description %}<h3 class="text-uppercase m-bot-30 inline-block light-txt">{{ slide.description }}</h3>{% endif %}
+                                        {% if slide.button %}
+                                        <div class="inline-block">
+                                            <a href="{{ slide.button-url }}" class="btn btn-medium btn-theme-color"> {{ slide.button }} </a>
+                                        </div>
+                                        {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+        </div>
+</section>

@@ -1,0 +1,105 @@
+
+
+    <!-- 3 articles - 3 columns -->
+      <div class="row ">
+        <div class="col-md-12">
+            <!-- Heading -->      
+            <div class="heading-title-alt2">
+                <h4 class="text-uppercase heading-border-bottom">{{ section }}</h4>
+            </div>
+          </div>
+      </div>            
+              <!-- Heading -->
+              {% assign count = 0 %}
+              {% for post in site.posts %}
+              {% unless excluded contains post.id %} 
+              {% assign tags = post.tags | join: ',' | downcase %}
+              {% if tags contains target %} 
+              
+              {% assign excluded = excluded | append: post.id | append: ',' %}
+              {% assign mod = count | modulo:3 %}
+              {% if mod == 0 %}
+      <div class="row ">
+        <div class="post-list">
+              {% endif %}
+          <div class="col-md-4">
+            <div class="post-list">
+            <div class="post-single">
+              <ul class="post-cat">
+                {% for cat in post.categories %}
+                <li><a href="/blog/{{ cat | downcase | replace: ' ','-' }}/">{{ cat | strip}}{%if forloop.last == false %},{% endif %} </a></li>
+                {% endfor %}
+              </ul> 
+            <!-- Youtube, embedded, gallery, thumbnail, feature image -->
+              <div class="post-img">
+
+
+              {% if post.video-embedded and post.video-embedded.related and post.video-embedded.related == true %}
+                  <!-- Embedded video here -->
+                  {% assign video = post.video-embedded %}
+                  {% include blog/video-embedded.html %}
+              {% elsif post.gallery and post.gallery.related %}
+              <!-- Embedded gallery here -->
+                  {% include blog/gallery-post.html %}
+              {% elsif post.images %}
+              <!-- Embedded image here -->
+                  {% assign images = post.images | reverse %}
+                  {% for image in images %}
+                      {% if image.type == 'related' or image.type == 'thumbnail' or image.type == 'feature' %}
+                        <!-- found {{image.type}} image -->
+                            {% assign title = image.title %}
+                            {% unless image.title %}
+                                {% assign title = image.url | split: '_' | last | split: '.' | first | replace: '--', ', ' | replace: '-', ' ' | replace: '/', ' ' %}
+                            {% endunless %}                        
+                            {% if post.alt-title %}
+                            <div class="post-img title-img">
+                              <a href="{{ post.url }}">
+                              <img src="{{ site.post-image-url }}/{{ image.url }}" alt="{{ title }}">
+                              <div class="info">{{ post.alt-title}}</div>
+                              </a>
+                            </div>
+                            {% else %}
+                            <a href="{{ post.url }}">
+                            <img src="{{ site.post-image-url }}/{{ image.url }}" alt="{{ title }}">
+                            </a>
+                            {% endif %}
+                        {% break %}
+                      {% endif %}
+                  {% endfor %}
+              {% endif %}
+
+              
+              </div>             
+              <div class="post-desk p-top-20">
+                <h4 class="text-uppercase"><a href="{{ post.url }}">{{ post.title }}</a></h4>
+                <div class="date">
+                  <a href="/profiles/{{ post.author | downcase | replace: ' ', '-'}}.html" class="author">{{ post.author }}</a> {{ post.date | date_to_long_string }}
+                </div>
+                <p>{{ post.description }}</p>
+                <a href="{{ post.url }}" class="p-read-more">Read More <i class="icon-arrows_slim_right"></i></a>
+              </div>
+            </div>
+            </div>
+          </div>
+          {% if mod == 2 %}
+        </div>
+      </div>
+          {% endif %}
+          {% assign count = count | plus: 1 %}
+
+          {% endif %}  
+          {% if count >= total %}
+            {% break %}
+
+          {% endif%}
+          {% endunless %} 
+          {% endfor %}
+
+    <div class="row">
+      <div class="inline-block text-center">
+        <a href="/blog/" class="p-read-more">View all articles<i class="icon-arrows_slim_right"></i></a>
+      </div>
+    </div>
+
+
+

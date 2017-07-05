@@ -108,6 +108,65 @@
 
 
         /*==============================================
+         Flex slider init
+         ===============================================*/
+        $window.load(function () {
+            $(".portfolio-slider").flexslider({
+                animation: "slide",
+                direction: "vertical",
+                slideshowSpeed: 3000,
+                start: function () {
+                    imagesLoaded($(".portfolio"), function () {
+                        setTimeout(function () {
+                            $(".portfolio-filter li:eq(0) a").trigger("click");
+                        }, 500);
+                    });
+                }
+            });
+        });
+
+        $window.load(function () {
+            $(".portfolio-slider-alt").flexslider({
+                animation: "slide",
+                direction: "horizontal",
+                slideshowSpeed: 4000,
+                start: function () {
+                    imagesLoaded($(".portfolio"), function () {
+                        setTimeout(function () {
+                            $(".portfolio-filter li:eq(0) a").trigger("click");
+                        }, 500);
+                    });
+                }
+            });
+        });
+
+        $window.load(function () {
+            $(".post-slider-thumb").flexslider({
+                animation: "slide",
+                controlNav: "thumbnails",
+                directionNav: true,
+                touch: true
+            });
+        });
+
+        $window.load(function () {
+            $(".post-slider").flexslider({
+                animation: "slide",
+                touch: true,
+                directionNav: true
+            });
+        });
+
+
+        $('.flex-controls').on('click', function(e){
+            e.preventDefault();
+            var href = $(this).attr('flex-direction');
+            $('.post-slider, .post-slider-thumb').flexslider(href);
+            return false;
+        })
+
+
+        /*==============================================
          Full screen banner init
          ===============================================*/
         $window.bind("resizeEnd", function () {
@@ -372,6 +431,17 @@
 
             });
 
+            $('#img-carousel').magnificPopup({
+              delegate: 'a', // child items selector, by clicking on it popup will open
+              type: 'image',
+              gallery:{
+                enabled:true,
+                 preload: [0,2],
+                 navigateByImgClick: true
+              }          
+              // other options
+            });
+
             $("#app-carousel").owlCarousel({
                 autoplay:true,
                 autoplayTimeout:2000,
@@ -396,6 +466,18 @@
                 pagination : false,
                 dots: true,
                 navigationText: ["<i class='fa fa-angle-left'></i>", "<i class='fa fa-angle-right'></i>"]
+            });
+
+            
+            $("#portfolio-carousel").owlCarousel({
+                autoPlay: 3000, //Set AutoPlay to 3 seconds
+                items: 3,
+                itemsDesktop: [1199, 3],
+                itemsDesktopSmall: [979, 3],
+                navigation: true,
+                pagination: false,
+                navigationText: ["<i class='fa fa-angle-left'></i>", "<i class='fa fa-angle-right'></i>"]
+
             });
 
             $("#portfolio-carousel-alt").owlCarousel({
@@ -467,26 +549,34 @@
             
         });
 
-
-
         /*==============================================
          Contact form
          ===============================================*/
+
         initMailer();
 
     });
 
+
+        // TODO
+
     function initMailer() {
-        var url = 'http://localhost:9100/api/mailer'
-        var app = 'gday'
+        var url = 'https://api.gdaydigitalnomads.com/api/mailer'
+
+        $.getJSON('//freegeoip.net/json/?callback=?', function(data) {
+            $("#user-meta").val(JSON.stringify(data, null, 2))
+        });
+
 
         if (!$.fn.validator) {
             return;
         }
 
         $(".js-Mailer").validator().on("submit", function(e) {
+            
             var $form     = $(this)
             var $response = $("<div />", {
+                    "id": "mailmessage",
                     "class": "alert js-Response text-center",
                     "style": "margin-top: 20px; display:none"
                     });
@@ -499,18 +589,26 @@
             if (e.isDefaultPrevented()) {
                 return;
             }
+
+            var $msg = $("#mailmessage");
+            if (grecaptcha.getResponse() == ""){
+                e.preventDefault();
+                showMailerResponse($form, $msg, "You must cheeck the Captcha.", "warning");
+                return;
+            } 
+            
             e.preventDefault();
 
-            $.post(url + '/' + app, $form.serialize()
+            $.post(url, $form.serialize()
             ).done(function(r) {
                 var res = JSON.parse(r);
                 if (res.success == true) {
-                    showMailerResponse($form, $response, "Thank you. Your message has been sent.");
+                    showMailerResponse($form, $msg, "Thank you. Your message has been sent.");
                 } else {
-                    showMailerResponse($form, $response, "Woops. There is something wrong, try again!", "warning");
+                    showMailerResponse($form, $msg, "Woops. There is something wrong, try again!", "warning");
                 }
             }).fail(function() {
-                showMailerResponse(null, $response, "Oh no! Failed!", "warning");
+                showMailerResponse(null, $msg, "Oh no! Failed!", "warning");
             })
         });
     }
@@ -525,7 +623,6 @@
         if (rType === "warning") {
             rClass = "alert-success",
             aClass = "alert-warning";
-
             $holder
                 .removeClass(rClass)
                 .addClass(aClass)
