@@ -13,7 +13,7 @@ gallery-image-url: "/static/images/galleries"
 product-image-url: "/static/images/shop"
 ## Image types: fullwidth (width: 2200), large (width: 1100), feature(width: 720), relate (width: 330), thumbnail (width: 80 or 60)
 
-environment-url: local.gdaydigitalnomads.com
+environment-url: www.gdaydigitalnomads.com
 
 #Third parties
 google_analytics: "UA-98384350-1"

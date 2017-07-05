@@ -39,7 +39,7 @@ social:
 markdown: kramdown
 highlighter: rouge
 include: ["_pages", "_profiles"]
-exclude: ["node_modules","gulpfile.js","package.json","README.md","LICENSE","CNAME", "_profiles"]
+exclude: ["node_modules","gulpfile.js","package.json","README.md","LICENSE","CNAME"]
 permalink: pretty
 collections:
   shop:
@@ -49,6 +49,7 @@ collections:
     output: true
     permalink: /blog/:categories/:title.html      
   profiles:
+    output: true
     permalink: /profiles/:name.html        
 
 defaults:
