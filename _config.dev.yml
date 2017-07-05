@@ -39,7 +39,8 @@ social:
 markdown: kramdown
 highlighter: rouge
 include: ["_pages", "_profiles"]
-exclude: ["node_modules","gulpfile.js","package.json","README.md","LICENSE","CNAME"]
+exclude: ["node_modules","gulpfile.js","package.json","README.md","LICENSE","CNAME", "static"]
+keep_files: ["static"]
 permalink: pretty
 collections:
   shop:

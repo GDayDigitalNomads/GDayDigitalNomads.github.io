@@ -9,7 +9,6 @@
     <script src="{{ site.resource-url }}/vendor/easy-pie-chart/jquery.easypiechart.min.js"></script>
     <script src="{{ site.resource-url }}/vendor/elasic-slider/jquery.eislideshow.js"></script>
     <script src="{{ site.resource-url }}/vendor/flex-slider/jquery.flexslider-min.js"></script>
-    <!--<script src="{{ site.resource-url }}/vendor/gmap/jquery.gmap.min.js"></script>-->
     <script src="{{ site.resource-url }}/vendor/images-loaded/imagesloaded.js"></script>
     <script src="{{ site.resource-url }}/vendor/isotope/jquery.isotope.js"></script>
     <script src="{{ site.resource-url }}/vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
@@ -21,15 +20,13 @@
     <script src="{{ site.resource-url }}/vendor/smooth/smooth.js"></script>
     <script src="{{ site.resource-url }}/vendor/sticky/jquery.sticky.min.js"></script>
     <script src="{{ site.resource-url }}/vendor/touchspin/touchspin.js"></script>
-    <!--<script src="{{ site.resource-url }}/vendor/typist/typist.js"></script>-->
     <script src="{{ site.resource-url }}/vendor/visible/visible.js"></script>
     <script src="{{ site.resource-url }}/vendor/wow/wow.min.js"></script>
     <script src='https://www.google.com/recaptcha/api.js'></script>
     {% if page.comments %}
-    <script id="dsq-count-scr" src="http://{{ site.disqus_account }}.disqus.com/count.js"></script>
+    <script id="dsq-count-scr" src="https://{{ site.disqus_account }}.disqus.com/count.js"></script>
     <script>
       var disqus_config = function () {
-          //this.page.url = 'http://{{ site.environment-url }}{{ page.url }}'; 
           this.page.identifier = '{{ page.slug | replace: ' ', '-' }}';
       };
 
@@ -42,13 +39,13 @@
   </script>
   {% endif %}   
     
-    {% if jekyll.environment == "production" %}
-    <!-- prod -->
-    <script src="{{ site.resource-url }}/js/scripts.min.js"></script>
-    {% else %}
+    <!-- if jekyll.environment == "production" -->
+    <!-- prod 
+    <script src="{{ site.resource-url }}/js/scripts.min.js"></script> -->
+    <!-- else -->
     <!-- dev -->
     <script src="{{ site.resource-url }}/js/scripts.js"></script>
-    {% endif %}
+    <!-- endif -->
 
     {% if site.google_analytics %}
     <script type="text/javascript">
