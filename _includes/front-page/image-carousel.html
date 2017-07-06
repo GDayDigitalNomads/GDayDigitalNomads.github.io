@@ -7,7 +7,7 @@
 				<div class="col-md-12">
 					<div class="inline-block p-top-20">
 						<h4 class="text-uppercase heading-border-bottom">Latest Photos</h4>
-						<div id="img-carousel">
+						<div id="img-carousel" class="magnificPopupGallery">
 							{% for gallery in site.data.galleries %}
 								{% for gallery_name in _galleries %}
 									{% if gallery_name == gallery.title %}

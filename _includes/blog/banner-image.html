@@ -1,9 +1,9 @@
-        <section class="page-title background-title dark" style=" background-image: url('{{ site.post-image-url }}/{{ image.url}}'); {% if image.height and image.height != ''%}height: {{ image.height }}!important; overflow: hidden;{% endif %}">
+        <section class="page-title background-title dark" style=" background-image: url('{{ site.image-url }}/{{ image.url}}'); {% if image.height and image.height != ''%}min-height: {{ image.height }}!important; overflow: hidden;{% endif %}">
             <div class="container-mid">
                 <div class="container">
                     <div class="banner-box">
-                        <h1 class="text-uppercase">{{ image.title }}</h1>
-                        <h3 class=light-txt>{{ image.description}}</h3>
+                        <h2 class="text-uppercase">{{ image.title }}</h2>
+                        <h4 class=light-txt>{{ image.description}}</h4>
                     </div>
                 </div>
             </div>
