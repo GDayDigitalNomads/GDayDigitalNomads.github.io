@@ -47,7 +47,7 @@ collections:
     permalink: /shop/:categories/:title.html  
   posts:
     output: true
-    permalink: /blog/:categories/:title.html      
+    permalink: /blog/:categories/:slug.html      
   profiles:
     output: true
     permalink: /profiles/:name.html        
