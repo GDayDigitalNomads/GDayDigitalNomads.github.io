@@ -432,3 +432,40 @@ a.subtitle {
 .secondary-theme-color {
   color: $theme-color-secondary!important;
 }
+
+@media (min-width: 350px) {
+  .app-img-bottom-right,
+  .app-img-bottom {
+    min-height: 250px;
+  }
+}
+@media (min-width: 500px) {
+  .app-img-bottom-right,
+  .app-img-bottom {
+    min-height: 350px;
+  }
+}
+@media (min-width: 630px) {
+  .app-img-bottom-right,
+  .app-img-bottom {
+    min-height: 450px;
+  }
+}
+
+@media (min-width: 1012px) {
+  .app-img-bottom-right,
+  .app-img-bottom {
+    min-height: 550px;
+  }
+}
+
+.app-img-bottom img {
+  position: absolute;
+  left:15%;
+  bottom: 0;
+}
+.app-img-bottom-right img {
+  position: absolute;
+  right:5%;
+  bottom: 0;
+}
