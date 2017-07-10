@@ -1,6 +1,7 @@
         <!--header start-->
-        <header class="l-header l-header_overlay">
-            <div class="l-navbar l-navbar_expand l-navbar_t-dark-trans js-navbar-sticky">
+        <header class="l-header">
+            <div class="l-navbar l-navbar_t-dark js-navbar-sticky">
+
                 <div class="container">            
                     <nav class="menuzord js-primary-navigation" role="navigation" aria-label="Primary Navigation">
 
@@ -11,19 +12,19 @@
                         <!--logo end-->
 
                         <!--mega menu start - pull-right op-nav light c-nav_s-standard -->
-                        <ul class="menuzord-menu menuzord-right op-nav c-nav_s-standard">
+                        <ul class="menuzord-menu menuzord-right c-nav_s-standard">
                             {% for link in nav %}
                             <li class="{%if link.class %}{{ link.class }}{% endif %}"{% if link.additional %} {{ link.additional }}><a href="javascript:void(0)"{% else %}><a href="{{link.url}}"{% endif %} title="{{link.description}}">{{link.title}}</a>
                                 {% if link.dropdown %}
                                     <ul class="dropdown">
                                     {% for subLink in link.dropdown %}
                                         <li class="{%if subLink.class %}{{ subLink.class }}{% endif %}{%if subLink.icon %} ico-nav{% endif %}">
-                                            <a href="{{subLink.url}}" title="{{subLink.description}}">{{subLink.title}}</a>
+                                            <a data-scroll href="{{subLink.url}}" title="{{subLink.description}}">{{subLink.title}}</a>
                                             {%if subLink.icon %} <i class="{{ subLink.icon }}"></i>{% endif %}
                                         {% if subLink.dropdown %}
                                         <ul class="dropdown">
                                         {% for subSubLink in subLink.dropdown %}
-                                            <li{%if subSubLink.class %} class="{{ subSubLink.class }}"{% endif %}><a href="{{subSubLink.url}}" title="{{subSubLink.description}}">{{subSubLink.title}}</a></li>
+                                            <li{%if subSubLink.class %} class="{{ subSubLink.class }}"{% endif %}><a data-scroll href="{{subSubLink.url}}" title="{{subSubLink.description}}">{{subSubLink.title}}</a></li>
                                         {%endfor %}
                                         </ul>
                                         {% endif %}

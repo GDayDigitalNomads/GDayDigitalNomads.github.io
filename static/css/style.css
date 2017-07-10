@@ -118,7 +118,7 @@ h5,
 h6 {
   color: #333;
   line-height: 1.5;
-  margin: 0 0 30px 0;
+  margin: 0 0 25px 0;
   font-weight: normal; }
 
 h1,
@@ -151,7 +151,7 @@ iframe {
   border: none; }
 
 p {
-  margin: 0 0 30px;
+  margin: 0 0 25px;
   line-height: 30px;
   color: #7e7e7e; }
 
@@ -4177,12 +4177,18 @@ address p {
   right: 10%;
   bottom: 0; }
 
+.app-img-bottom-right,
 .app-img-bottom {
-  min-height: 600px; }
+  min-height: 550px; }
 
 .app-img-bottom img {
   position: absolute;
   left: 15%;
+  bottom: 0; }
+
+.app-img-bottom-right img {
+  position: absolute;
+  right: 5%;
   bottom: 0; }
 
 .app-icon i {
@@ -9463,10 +9469,21 @@ a,
 .dark-feature p, .dark-feature ul, .dark-feature .desc {
   color: #7e7e7e; }
 
-div .dark-feature-bg {
+.dark-feature-bg {
   background-color: #222222; }
 
-div .dark-feature-parallax {
+.blue-feature-bg {
+  background-color: #296d79; }
+
+.theawakening {
+  background-color: rgba(0, 0, 0, 0.4);
+  background-blend-mode: multiply;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-image: url("../img/app/sound-waves.jpg") !important; }
+
+.dark-feature-parallax {
   background-color: rgba(0, 0, 0, 0.7);
   background-blend-mode: multiply;
   background-size: cover;
@@ -9475,7 +9492,7 @@ div .dark-feature-parallax {
   background-position: 50% 50%;
   background-image: url("../img/parallax/1.jpg") !important; }
 
-div .playful-feature-parallax {
+.playful-feature-parallax {
   background-color: rgba(0, 0, 0, 0.4);
   background-blend-mode: multiply;
   background-size: cover;
@@ -9501,6 +9518,15 @@ div .playful-feature-parallax {
   background-image: -o-linear-gradient(right, rgba(0, 0, 0, 0.4), black), url("../img/services/web-design-heroshot.jpg");
   background-image: -moz-linear-gradient(right, rgba(0, 0, 0, 0.4), black), url("../img/services/web-design-heroshot.jpg");
   background-image: linear-gradient(to right, rgba(0, 0, 0, 0.4), black), url("../img/services/web-design-heroshot.jpg"); }
+
+.custom-parallax-4 {
+  background-image: url("../img/banner/featured-apps1.jpg") !important; }
+
+.custom-parallax-5 {
+  background-image: url("../img/banner/featured-apps2.jpg") !important; }
+
+.custom-parallax-6 {
+  background-image: url("../img/banner/featured-apps3.jpg") !important; }
 
 .page-title.about-me-background {
   background-image: url(../img/profiles/jordan-rancie-banner.jpg);
@@ -9782,6 +9808,21 @@ a.subtitle {
   text-transform: none !important;
   color: #666 !important;
   font-size: 12px !important; }
+
+.vertical-align .container-top {
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  z-index: 200; }
+
+.page-content-sm.compact {
+  display: block;
+  padding-bottom: 0px !important; }
+
+.secondary-theme-color {
+  color: #ff6600 !important; }
 
 /* test css */
 .banner-box-hawaii {

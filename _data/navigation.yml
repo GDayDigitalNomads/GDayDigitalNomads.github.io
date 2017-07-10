@@ -2,13 +2,9 @@
   url: "/#home"
   description: "GDay Digital Nomads Home Page"
 
-- title: "Latest Adventures"
-  url: "/#latest-adventures"
-  description: "Recent posts on digital nomadic life around the world"
-
 - title: "Featured Apps"
   url: "/#featured-apps"
-  description: "Latest Apps worth looking at"
+  description: "Latest Apps worth supporting"
 #  dropdown:
 #  - title: "OneVote"
 #    url: "/#one-vote"
@@ -35,38 +31,42 @@
 #    description: "Wallet, Banking & Budgeting for travellers"
 #    class: camelcase
 
+- title: "Latest Adventures"
+  url: "/#latest-adventures"
+  description: "Recent posts on digital nomadic life around the world"
+
 - title: "Services"
-  url: "/#services"
+  url: "/services/#services"
   description: "Our services"  
   dropdown:
   - title: "Web Design & Development"
-    url: "/#service-web"
+    url: "/services/#service-web"
     description: ""
     icon: icon-browser2        
   - title: "App Development"
-    url: "/#service-app"
+    url: "/services/#service-app"
     description: ""         
     icon: icon-mobile     
   - title: "Core Programming"
-    url: "/#service-core"
+    url: "/services/#service-core"
     description: ""          
     icon: fa fa-code
   - title: "Cloud / Big Data"
-    url: "/#service-cloud-bigdata"
+    url: "/services/#service-cloud-bigdata"
     description: ""
     icon: icon-cloud          
   - title: "Enterprise Architecture"
-    url: "/#service-enterprise-architecture"
+    url: "/services/#service-enterprise-architecture"
     description: ""              
     icon: icon-circle-compass
   - title: "Project Management"
-    url: "/#service-project-management"
+    url: "/services/#service-project-management"
     description: ""  
     icon: icon-basic_watch            
 
 - title: "About Us"
   url: "/#about-us"
-  description: "About Us"
+  description: "About Me"
 
 - title: "|"
   class: nav-divider

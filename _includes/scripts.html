@@ -47,6 +47,11 @@
     <script src="{{ site.resource-url }}/js/scripts.js"></script>
     <!-- endif -->
 
+    {% if page.revslider %}
+    {% include custom/revslider-script.html %}
+    {% endif %}
+
+
     {% if site.google_analytics %}
     <script type="text/javascript">
       var _gaq = _gaq || [];

@@ -11,8 +11,10 @@
     </div>
     <!-- preloader end -->
 
-    <div class="wrapper" id="home">
-
+    <div class="wrapper" id="{{ page.anchor }}">
+    {% assign nav = site.data.navigation %}
+    {% include navs/header-trans.html %}
+    
     {{ content }}
 
     {% include footer.html %}
