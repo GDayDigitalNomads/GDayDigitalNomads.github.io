@@ -37,7 +37,6 @@ social:
 
 # Build settings
 markdown: kramdown
-highlighter: rouge
 include: ["_pages", "_profiles"]
 exclude: ["node_modules","gulpfile.js","package.json","README.md","LICENSE","CNAME"]
 permalink: pretty
@@ -69,7 +68,7 @@ defaults:
     values:
       layout: post
 
-gems: [jekyll-feed]
+gems: [github-pages, jekyll-feed, jekyll-sitemap]
 # Build settings
 
 port: 80
