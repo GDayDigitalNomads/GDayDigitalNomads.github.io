@@ -1,7 +1,7 @@
 
                             {% assign gallery = post.gallery %}
                             {% if gallery.images %}
-                            <div class="full-width  m-bot-0">
+                            <div class="full-width">
                                 <div class="post-slider post-img text-center">
                                     <ul class="slides">
                                             {% for image in gallery.images %}
@@ -20,7 +20,7 @@
                             </div>
                             <!-- GALLERY IMAGES FOUND -->
                             {% elsif gallery.sitegallery %}
-                            <div class="full-width  m-bot-0">
+                            <div class="full-width ">
                                 <div class="post-slider post-img text-center">
                                     <ul class="slides">
                                 {% for site_gallery in site.data.galleries %}
@@ -34,6 +34,8 @@
                                                     {% endunless %}
                                                     {% if site_gallery.related %}
                                                         {% capture url %}{{ site.gallery-image-url }}/{{ site_gallery.directory }}/{{ site_gallery.related }}/{{ image.url }}{% endcapture %}
+                                                    {% elsif post.gallery.related and post.gallery.related != '' %}
+                                                        {% capture url %}{{ site.gallery-image-url }}/{{ site_gallery.directory }}/{{ post.gallery.related }}/{{ image.url }}{% endcapture %}
                                                     {% else %}
                                                         {% capture url %}{{ site.gallery-image-url }}/{{ site_gallery.directory }}/{{ image.url }}{% endcapture %}
                                                     {% endif %}

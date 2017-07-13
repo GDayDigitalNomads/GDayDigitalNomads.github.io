@@ -9840,6 +9840,9 @@ a.subtitle {
   right: 5%;
   bottom: 0; }
 
+.banner {
+  background-position: 0 0 !important; }
+
 /* test css */
 .banner-box-hawaii {
   background-image: url("../img/header-hawaii-sunset.jpg") !important; }
