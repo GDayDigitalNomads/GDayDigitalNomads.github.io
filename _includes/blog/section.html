@@ -95,7 +95,9 @@
                 <div class="date">
                   <a href="/profiles/{{ post.author | downcase | replace: ' ', '-'}}.html" class="author">{{ post.author }}</a> {{ post.date | date_to_long_string }}
                 </div>
-                <p>{{ post.description }}&nbsp;&nbsp;&nbsp;&nbsp;<a href="{{ post.url }}" class="p-read-more">Read More</a></p>
+                <p>{{ post.description }}</p>
+                <a href="{{ post.url }}" class="btn btn-extra-small btn-dark-border btn-transparent "> Read More</a>
+                                
                 
               </div>
             </div>
