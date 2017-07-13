@@ -37,7 +37,7 @@ social:
 
 # Build settings
 markdown: kramdown
-include: ["_pages", "_profiles"]
+include: ["_pages"]
 exclude: ["node_modules","gulpfile.js","package.json","README.md","LICENSE","CNAME"]
 permalink: pretty
 collections:
