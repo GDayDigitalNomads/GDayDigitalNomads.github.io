@@ -12,19 +12,36 @@
       </div>            
       {% endif %}
 
-              <!-- Heading -->
-              {% assign count = 0 %}
-              {% for post in site.posts %}
-              {% unless excluded contains post.id %} 
-              {% assign tags = post.tags | join: ',' | downcase %}
-              {% if tags contains target %} 
-              <!-- MATCH FOR {{ post.id }} with tags {{ post.tags }}-->
-              {% assign excluded = excluded | append: post.id | append: ',' %}
-              {% assign mod = count | modulo:3 %}
-              {% if mod == 0 %}
+      {% assign section_ids = '' %}
+      {% assign count = 0 %}
+      {% assign counter = 0 %}
+      {% assign posts = site.posts %}
+      {% if order and order == 'reverse' %}
+        {% assign posts = posts | reverse %}
+      {% endif %}
+      {% for post in posts %}
+      {% unless excluded contains post.id %} 
+      {% assign tags = post.tags | join: ',' | downcase %}
+      {% if tags contains target %} 
+        <!-- MATCH FOR {{ post.id }} with tags {{ post.tags }}-->
+        {% assign count = count | plus: 1 %}
+        {% assign section_ids = section_ids | append: post.id | append: ',' %}
+        {% assign excluded = excluded | append: post.id | append: ',' %}
+        {% if count >= total %}
+          {% break %}
+        {% endif %}
+      {% endif %}
+      {% endunless %}
+      {% endfor %}
+
+      
+      {% for post in posts %}
+      {% if section_ids contains post.id %}
+        {% assign mod = counter | modulo:3 %}
+        {% if mod == 0 %}
       <div class="row ">
         <div class="post-list">
-              {% endif %}
+        {% endif %}
           <div class="col-md-4">
             <div class="post-list">
             <div class="post-single">
@@ -84,22 +101,17 @@
             </div>
             </div>
           </div>
-          {% if mod == 2 %}
+        {% assign counter = counter | plus: 1 %}
+        {% assign mod = counter | modulo:3 %}
+        {% if mod == 0 or counter == count %}
         </div>
       </div>
-          {% endif %}
-          {% assign count = count | plus: 1 %}
-
-          {% endif %}  
-          {% if count >= total %}
-            {% break %}
-
-          {% else %}
-            <!-- NO MATCH FOR {{ post.id }} with tags {{ post.tags  }}-->
-            <!-- Cats are {{ post.categories }}-->
-          {% endif %}
-          {% endunless %} 
-          {% endfor %}
+        {% endif %}
+        {% if counter == count %}
+          {% break %}
+        {% endif %}
+      {% endif %}
+      {% endfor %}
 
     <div class="row">
       <div class="inline-block text-center">

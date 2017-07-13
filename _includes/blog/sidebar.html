@@ -34,29 +34,63 @@
                                 {% for post in site.posts %}
                                 {% if related_postids contains post.id %}
                                     <div class="post-single">
-                                        {% assign thumb = '' %}
-                                        {% if post.images %}
-                                            {% for img in post.images %}
-                                                {% if img.type =='related' %}
-                                                    {% assign thumb = img %}
-                                                    {% break %}
-                                                {% elsif img.type =='thumbnail' %}
-                                                    {% assign thumb = img %}
-                                                {% endif %}
-                                            {% endfor %}
-                                        {% endif %}
                                         <ul class="post-cat">
                                             {% for cat in post.categories %}
                                             <li><a href="/blog/{{ cat | downcase | replace: ' ','-' }}/">{{ cat }}</a></li>
                                             {% endfor %}
-                                        </ul>                                        
-                                        {% if thumb != ''%}
+                                        </ul>
+
+
                                         <div class="post-img">
-                                            <a href="{{ post.url }}" class="sharethis">
-                                                <img src="{{ site.post-image-url }}/{{ thumb.url }}" alt="{{ post.slug }}">
-                                            </a>
-                                        </div>
-                                        {% endif %}
+
+                                          {% if post.video-embedded and post.video-embedded.related and post.video-embedded.related == true %}
+                                              <!-- Embedded video here -->
+                                              {% assign video = post.video-embedded %}
+                                              {% include blog/video-embedded.html %}
+                                          {% elsif post.gallery and post.gallery.related %}
+                                          <!-- Embedded gallery here -->
+                                              {% include blog/gallery-post.html %}
+                                          {% elsif post.images %}
+                                          <!-- Embedded image here -->
+                                          {% assign images = post.images | reverse %}
+                                          {% assign thumb = '' %}
+
+                                          {% for img in images %}
+                                              {% if img.type =='related' %}
+                                                  {% assign thumb = img %}
+                                                  {% assign title = image.title %}
+                                                  {% unless image.title %}
+                                                      {% assign title = image.url | split: '_' | last | split: '.' | first | replace: '--', ', ' | replace: '-', ' ' | replace: '/', ' ' %}
+                                                  {% endunless %}                                                    
+                                                  {% break %}
+                                              {% elsif img.type =='thumbnail' %}
+                                                  {% assign thumb = img %}
+                                                  {% unless image.title %}
+                                                      {% assign title = image.url | split: '_' | last | split: '.' | first | replace: '--', ', ' | replace: '-', ' ' | replace: '/', ' ' %}
+                                                  {% endunless %}                                                  
+                                              {% endif %}
+                                          {% endfor %}
+
+                                          {% if thumb != '' %}
+                                            <!-- found {{thumb.type}} image -->
+                                                {% if post.alt-title %}
+                                                <div class="post-img title-img">
+                                                    <a href="{{ post.url }}">
+                                                        <img src="{{ site.post-image-url }}/{{ thumb.url }}" alt="{{ title }}">
+                                                        <div class="info">{{ post.alt-title}}</div>
+                                                    </a>
+                                                </div>
+                                                {% else %}
+                                                <a href="{{ post.url }}">
+                                                    <img src="{{ site.post-image-url }}/{{ thumb.url }}" alt="{{ title }}">
+                                                </a>
+                                                {% endif %}
+                                          {% else %}
+                                            <!-- no image found -->      
+                                          {% endif %}
+                                          {% endif %}
+                                          </div>    
+
                                         <div class="post-desk p-top-20 {% if counter >= total %}p-bot-20{% else %}p-bot-0{% endif %}">
                                             <h4 class="text-uppercase">
                                                 <a href="{{ post.url }}">{{ post.title }}</a>
@@ -78,75 +112,6 @@
                             {% endif %}
 
 
-                            {% assign total = 2 %}
-                            {% assign counter = 0 %}
-                            {% assign featured_postids = '' %}
-                            
-                            {% for post in site.posts %}
-                                {% unless excluded contains post.id %}
-                                    {% assign post_tags = post.tags | join : ',' | downcase %}
-                                    {% if post_tags contains 'featured' %}
-                                        {% assign counter = counter | plus: 1  %}
-                                        {% assign featured_postids = featured_postids | append: post.id | append: ','  %}
-                                    {% endif %}
-                                    {% if counter >= total %}
-                                        {% break %}
-                                    {% endif %}
-                                {% endunless%}
-                            {% endfor %}
-
-                            {% if featured_postids != '' %}
-                            {% assign excluded = excluded | append: featured_postids  %}
-                            <div class="widget m-bot-0">
-                                <div class="heading-title-alt text-left heading-border-bottom">
-                                    <h4 class="text-uppercase">featured Articles</h4>
-                                </div>
-                                <div class="post-list">
-                                {% for post in site.posts %}
-                                {% if featured_postids contains post.id %}
-                                    <div class="post-single">
-                                        {% assign thumb = '' %}
-                                        {% if post.images %}
-                                            {% for img in post.images %}
-                                                {% if img.type =='related' %}
-                                                    {% assign thumb = img %}
-                                                    {% break %}
-                                                {% elsif img.type =='thumbnail' %}
-                                                    {% assign thumb = img %}
-                                                {% endif %}
-                                            {% endfor %}
-                                        {% endif %}
-                                        <ul class="post-cat">
-                                            {% for cat in post.categories %}
-                                            <li><a href="/blog/{{ cat | downcase | replace: ' ','-' }}/">{{ cat }}</a></li>
-                                            {% endfor %}
-                                        </ul>                                        
-                                        {% if thumb != ''%}
-                                        <div class="post-img">
-                                            <a href="{{ post.url }}" class="sharethis">
-                                                <img src="{{ site.post-image-url }}/{{ thumb.url }}" alt="{{ post.slug }}">
-                                            </a>
-                                        </div>
-                                        {% endif %}
-                                        <div class="post-desk p-top-20 {% if counter >= total %}p-bot-20{% else %}p-bot-0{% endif %}">
-                                            <h4 class="text-uppercase">
-                                                <a href="{{ post.url }}">{{ post.title }}</a>
-                                            </h4>
-                                            <div class="date m-bot-10">
-                                                <a href="/profiles/{{post.author | downcase | replace: ' ', '-'}}.html" class="author">{{post.author | downcase }}</a> {{ post.date | date_to_long_string }}
-                                            </div>
-                                            {% if post.description %}
-                                            <p>{{ post.description }}&nbsp;&nbsp;&nbsp;&nbsp;<a href="{{ post.url }}" class="p-read-more">Read More </a></p>
-
-                                            {% endif %}
-                                        </div>
-                                    </div>
-                                    {% endif %}
-                                    {% endfor %}  
-                                </div>                                                         
-                            </div>
-                            <!--featured articles-->
-                            {% endif %}
 
                             {% assign total = 10 %}
                             {% assign counter = 0 %}

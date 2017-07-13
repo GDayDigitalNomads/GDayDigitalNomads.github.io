@@ -1,8 +1,8 @@
 ---
 # slug is for URL and comments. Don't change once comments are committed
-slug: "biking through vietnam"
-title: "Buy a bike in Vietnam"
-alt-title: Biking through Vietnam!
+slug: "buying a bike in vietnam"
+title: "Buying a bike : Vietnam"
+alt-title: Pros and Cons!
 description: This article is for newbie bikers, where I will share with you my research and experience about buying a bike before biking around Vietnam.
 author: Audrey Cassim
 categories: ['Travel', 'Asia', 'Vietnam']
@@ -28,11 +28,11 @@ images:
 #    height: 150px
 #  - type: feature
 #    url: banners/w1.jpg
-#    description: This is a test description        
+#    description: This is a test title        
 #    height: 150px
   - type: thumbnail
-    url: p1.jpg
-    description: This is a test description 
+    url: yoga.jpg
+    title: This is a test title 
 
 # Gallery types: fullwidth, large, feature
 gallery:
