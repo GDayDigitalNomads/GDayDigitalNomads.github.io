@@ -10,7 +10,8 @@ comments: true
 images:
   - type: fullwidth
     url: posts/vietnam-road.jpg
-    title: On the road through Vietnam
+    title: On the road in Vietnam
+    description: All you need to know about buying a bike in Vietnam
     height: 800px
 # Gallery types: fullwidth, large, feature
 gallery:
