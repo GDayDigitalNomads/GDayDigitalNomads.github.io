@@ -6,11 +6,11 @@
                                     <ul class="slides">
                                             {% for image in gallery.images %}
                                                 <li>
-                                                    <a href="{{ post.url }}" title="{{ post.title }}">
                                                     {% assign title = image.title %}
                                                     {% unless image.title %}
                                                         {% assign title = image.url | split: '_' | last | split: '.' | first | replace: '--', ', ' | replace: '-', ' ' | replace: '/', ' ' %}
-                                                    {% endunless %}
+                                                    {% endunless %}                                                
+                                                    <a href="{{ post.url }}" title="{{ title }}">
                                                         <img src="{{ site.gallery-image-url }}/{{ gallery.directory }}/{{ gallery.related }}/{{ image.url }}" alt="{{ title }}">
                                                     </a>
                                                 </li>
@@ -27,11 +27,11 @@
                                         {% if gallery.sitegallery == site_gallery.title %}
                                             {% for image in site_gallery.images %}
                                                 <li>
-                                                    <a href="{{ post.url }}" title="{{ post.title }}">
                                                     {% assign title = image.title %}
                                                     {% unless image.title %}
                                                         {% assign title = image.url | split: '_' | last | split: '.' | first | replace: '--', ', ' | replace: '-', ' ' | replace: '/', ' ' %}
-                                                    {% endunless %}
+                                                    {% endunless %}                                                
+                                                    <a href="{{ post.url }}" title="{{ title }}">
                                                     {% if site_gallery.related %}
                                                         {% capture url %}{{ site.gallery-image-url }}/{{ site_gallery.directory }}/{{ site_gallery.related }}/{{ image.url }}{% endcapture %}
                                                     {% elsif post.gallery.related and post.gallery.related != '' %}
