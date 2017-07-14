@@ -2,7 +2,7 @@
 # slug is for URL and comments. Don't change once comments are committed
 slug: "buying a bike in vietnam"
 title: "Buying a bike in Vietnam"
-description: An article for newbie bikers, sharing my research and experience about buying a bike and biking around Vietnam.
+description: An article for newbie bikers, sharing my research and experience about all the benefits and pitfalls of buying a bike and biking around Vietnam.
 author: Audrey Cassim
 categories: ['Travel', 'Asia', 'Vietnam']
 tags: ['Featured', 'Travel', 'Vietnam', 'Adventure', 'Motorbike', 'Biking Tours', 'Honda Win']
