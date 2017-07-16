@@ -12,6 +12,7 @@ images:
     url: posts/vietnam-road.jpg
     title: On the road in Vietnam
     description: All you need to know about buying a bike in Vietnam
+    location: 'Road from Na Trang to Hoi An, Vietnam' 
     height: 800px
 # Gallery types: fullwidth, large, feature
 gallery:
