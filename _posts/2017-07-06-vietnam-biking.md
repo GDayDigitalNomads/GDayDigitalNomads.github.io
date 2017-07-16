@@ -20,25 +20,23 @@ gallery:
   thumb: thumb
   related: related
 ---
-Everything started with my partners dream a few years ago to motorbike through Vietnam. Yes, this is the dream of many backpackers, even though the transportation in Vietnam is good and cheap, biking adds that thrill and feeling of freedom and the chance to discover those out-of-the-way places standard transport can't get to.
-After two weeks of research we finally bought our bike in Ho Chi Minh city.
-Why two weeks? First, I had never biked before - I wasn’t even sure if i could drive by myself; and second, I'm very meticulous when it comes to buying something that so important to our safety, so i researched all the possibilities...even took some driving lessons. For two weeks I read as much as I could about the process, the scams and how to choose a safe bike.
+Everything started with my partner's dream a few years ago to motorbike through Vietnam. Yes, this is the dream of many backpackers, even though the transportation in Vietnam is good and cheap, biking adds that thrill and feeling of freedom and the chance to discover those out-of-the-way places standard transport can't get to. After two weeks of research we finally bought our bike in Ho Chi Minh city. Why two weeks? First, I had never biked before - I wasn’t even sure if I could drive by myself; and second, I'm very meticulous when it comes to buying something that so important to our safety, so I researched all the possibilities...even took some driving lessons.
+
+As a newbie, I read as much as I could about the process, the scams and how to choose a safe bike, which bike is the most reliable, the price I should expected, and best roads to drive…. the information was ambiguous at best. My first impression about bikes in Vietnam was every bike is a disaster waiting to happen, all roads are really bad, and your insurance will not cover you… But at the same time, many backpackers dream of experiencing Vietnam in this adventurous way. It gave you freedom to visit many remote areas, and see this gorgeeous country in a wonderful way. It has been by far been our most enjoyable experience traveling through South-East Asia so far.
+
+To be honest, if my partner wasn’t there, I wouldn't have chosen to bike through Vietnam by myself. It is truly not a easy trip for beginner riders, especially in the north. At the same time, I have no regret doing it at all, it was an amazing way to explore the country and discover many homestays you cannot reach by bus.
+
+MY HONEST ADVICE: Accidents happen, and can be disastrous. Local drivers can be atrocious. Unexpected things happen. So... be aware, take your time, be restful and make sure your bike is in working order.
 
 ### Choosing your bike
 
 There are three different types of bikes - Automatic, Semi-Automatic or Manual transmissions.
 
-With an Automatic transmission, you don’t have to worry about gears. The bike will do it all for you. It is really useful in busy cities when you have to stop often but i would not recommend it for long distance and mountain riding. You will not have enough power or control on the steep slopes of Vietnamese Mountains.
+With an Automatic transmission, you don’t have to worry about gears. The bike will do it all for you. It is really useful in busy cities when you have to stop often but I would not recommend it for long distance and mountain riding. You will not have enough power or control on the steep slopes of Vietnamese Mountains.
 
 To cross the country, the best choice for us was a manual. I tried both, semi-auto and manual - Manuals aren't that difficult, although it may take you few days to get confident. Semi-Automatic are basically the same as a manual but without the need for a clutch to change gears. But to be honest whatever you choose, riding any bike in Vietnam comes with alot of risk.   
 
 ### The Truth about Bike Brands in Vietnam
-
-As a newbie, I read many articles about which bike is the most reliable, the price I should expected, and best roads to drive…. the information was ambiguous at best. My first impression about bikes in Vietnam was every bike a disaster waiting to happen, all roads are really bad, and your insurance will not cover you… But at the same time, many backpackers dream of experiencing Vietnam in this adventurous way. It gave us freedom to visit many remote areas, and see this gorgeeous country in a wonderful way. It has been by far been our most enjoyable experience traveling through South-East Asia so far.
-
-To be honest, if my partner wasn’t there, I wouldn't have chosen to bike through Vietnam by myself. It is truly not a easy trip for beginner riders, especially in the north. At the same time, I have no regret doing it at all, it was an amazing way to explore the country and discover many homestays you cannot reach by bus.
-
-MY HONEST ADVICE: Accidents happen, and can be disastrous. Local drivers can be atrocious. Unexpected things happen. So... be aware, take your time, be restful and make sure your bike is in working order.
 
 #### History of the Honda Win
 
@@ -54,7 +52,7 @@ Basically, the bikes you'll be looking at do many trips north to south, south to
 Around $200US to $550US. It is cheaper in Hanoi than Ho Chi Minh.
 Our bike costs us $300US and we spent around $70 for mechanics and parts over the trip.
 
-## Where to buy
+### Where to buy
 
 #### From a shop
 
@@ -64,7 +62,7 @@ Be Careful with the bike rebuild by a shop: From our experience, they often try 
 #### From a Traveler
 
 It may or may not be reliable, really depends how well the backpacker maintained it, or how old some of the more crucial parts are....i.e Motors and Transmission Boxes are expensive to replace, tyres and brakes are cheap.
-Have a look on 
+Have a look on :
 {: .m-bot-10}
  * Backpacker Facebook groups
     * [Thailand, Cambodia, Laos and Vietnam Backpacker / Traveler](https://www.facebook.com/groups/ThailandCambodiaLaosVietnamBackpacker/)
@@ -75,10 +73,9 @@ Have a look on
     * [Travel Swop](http://www.travelswop.com/vietnam/ho-chi-minh-city/) 
  * Hostels : Many hostels also have flyers about travelers leaving and wanting to pass their bike on.
  * Rental, if you're travel less than a month, check with [style motorbikes](http://www.stylemotorbikes.com/), they have shops in HCM and Hanoi, so you can do the trip from one city and let your bike to the other. 
- * Hire a driver, if you are less confident to ride. It is good way to do it safely.
- * Also, check out [Easy-rider](http://www.easy-riders.net/), they do a lot of trip short or long, many around Hoi An and Da Lat. 
+ * Hire a driver, if you are less confident to ride. It is good way to do it safely. Check out [Easy-rider](http://www.easy-riders.net/), they do a lot of trip short or long, many around Hoi An and Da Lat. 
 
-#### Before you say YES, check the mechanics
+### Before you say YES, check the mechanics
 
 If you are new, try to find a friend who knows a little bit about bikes, or find a mechanic that can check it over for you. We found most mechanics to actually be very honest and valuable. And test drive it thoroughly. 
  * Check the Brakes;
@@ -102,7 +99,7 @@ Best decision ever, as it was more fun with the two of us, i could take pictures
 
 We bought a rebuild bike ( Detech Espero Win 110)  from a backpacker couple after their trip from Laos to South vietnam. Rebuilt engine. Good transmission. With custom rack mounts on the side we were able to carry 2 backpacks, 1 full-sized guitar, 1 ukulele, a computer bag and ourselves (around 190kg) with no major issues, just a few things to change due to wear and tear.
 
-#### Some Final Advice
+### Some Final Advice
 
 Take your time when buying a bike; don’t be pushed into buying something you are not 100% sure about, there are a lot of offers, no worries if the first bike is not for you.
 
