@@ -24,8 +24,14 @@
     background-blend-mode: multiply;
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: 50% 50%;  
+    background-attachment: fixed;
     background-image: url("../img/app/sound-waves.jpg")!important;
+}
+.berryberry {
+    background-color: rgba(0,0,0,.7);
+    background-blend-mode: multiply;
+    background-attachment: fixed;
+    background-image: url("../img/app/berryberry.png")!important;
 }
 
 .dark-feature-parallax {
