@@ -6813,7 +6813,7 @@ dl.toggle.time-line:before {
 
 .post-single .post-cat li {
   display: inline-block;
-  margin-right: 10px; }
+  margin-right: 5px; }
 
 .post-single .post-cat li a {
   color: #909090;
@@ -9472,7 +9472,6 @@ a,
 .berryberry {
   background-color: rgba(0, 0, 0, 0.7);
   background-blend-mode: multiply;
-  background-attachment: fixed;
   background-image: url("../img/app/berryberry.png") !important; }
 
 .dark-feature-parallax {

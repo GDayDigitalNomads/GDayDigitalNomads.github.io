@@ -36,7 +36,7 @@
                                     <div class="post-single">
                                         <ul class="post-cat">
                                             {% for cat in post.categories %}
-                                            <li><a href="/blog/{{ cat | downcase | replace: ' ','-' }}/">{{ cat }}</a></li>
+                                            <li><a href="/blog/{{ cat | downcase | replace: ' ','-' }}/">{{ cat | strip }}{%if forloop.last == false %},{% endif %}</a></li>
                                             {% endfor %}
                                         </ul>
 
