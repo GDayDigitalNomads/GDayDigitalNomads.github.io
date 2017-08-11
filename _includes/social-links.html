@@ -1,0 +1,17 @@
+
+            <!--promo box-->
+            <div class="full-width promo-box dark-bg p-bot-0">
+                <div class="container">
+                    <div class="col-md-12">
+                        <div class="text-center">
+                            <h3 class="light-txt">we <span class="theme-color">love</span> new friends</h3>
+                            <div class="social-link circle m-top-50 m-bot-50">
+                                {% for soci in site.social %}
+                                <a href="{{ soci.url }}"><i class="fa fa-{{ soci.title }}"></i></a>
+                                {% endfor %}
+                            </div>                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--promo box-->

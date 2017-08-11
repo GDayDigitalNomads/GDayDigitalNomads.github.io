@@ -1,5 +1,5 @@
 
-                                    <h3 class="text-uppercase"><a href="blog-single.html"> {{ page.title }}</a></h3>
+                                    <h3 class="text-uppercase m-bot-10"><a href="#"> {{ page.title }}</a></h3>
                                     <ul class="post-meta">
                                         {%if page.author %}<li><i class="fa fa-user"></i>posted by <a href="/profiles/{{ page.author | downcase | replace: ' ', '-'}}.html">{{ page.author}}</a>{% endif %}
                                         </li>
@@ -7,7 +7,7 @@
                                         <li>
                                         	<i class="fa fa-folder-open"></i>
                                         	{% for cat in page.categories %}
-                                        	<a href="/blog/{{ cat | downcase | replace: ' ','-' }}/">{{ cat | strip }}{%if forloop.last == false %}, {% endif %} </a>
+                                        	<a href="/blog/{{ cat | downcase }}/">{{ cat | strip | replace: '-',' ' }}{%if forloop.last == false %}, {% endif %} </a>
                                         	{% endfor %}
                                         </li>
                                         <li><i class="fa fa-comments"></i><a href="#disqus_thread" data-disqus-identifier='{{ page.slug | replace: " ", "-" }}'></a></li>

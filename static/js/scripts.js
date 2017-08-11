@@ -515,6 +515,22 @@
             }
         });
 
+        /*==============================================
+         Bitcoin funding
+        ================================================*/
+        if (typeof bitcoinaddress == 'object') {
+            bitcoinaddress.init({
+                selector: ".bitcoin-address",
+                template: "bitcoin-address-template",
+                qr : {
+                    width: 128,
+                    height: 128,
+                    colorDark : "#000000",
+                    colorLight : "#ffffff"
+                },
+                qrRawAddress: false
+            });
+        }
 
         /*==============================================
          Mailchip init

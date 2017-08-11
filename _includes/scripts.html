@@ -22,9 +22,33 @@
     <script src="{{ site.resource-url }}/vendor/touchspin/touchspin.js"></script>
     <script src="{{ site.resource-url }}/vendor/visible/visible.js"></script>
     <script src="{{ site.resource-url }}/vendor/wow/wow.min.js"></script>
-    <script src='https://www.google.com/recaptcha/api.js'></script>
-    {% if page.comments %}
+    <script type="text/javascript">
+      var CaptchaCallback = function() {
+        
+        if(document.getElementById("captcha_subscribe_dark"))
+          grecaptcha.render('captcha_subscribe_dark', {'sitekey' : '{{site.google_captcha}}', 'theme': 'dark'})
+        
+        if(document.getElementById("captcha_subscribe"))
+          grecaptcha.render('captcha_subscribe', {'sitekey' : '{{site.google_captcha}}'})
+        
+        if(document.getElementById("captcha_contact"))
+          grecaptcha.render('captcha_contact', {'sitekey' : '{{ site.google_captcha }}'})
+
+      }
+    </script>
+
+    <script src="https://www.google.com/recaptcha/api.js?onload=CaptchaCallback&render=explicit" async defer"></script>
+
+    {% if page.donate %}
+      {% for item in page.donate %}
+        {% if item.bitcoin %}
+        <script src="{{ site.resource-url }}/vendor/bitcoin/bitcoinaddress-bundle.min.js"></script>
+        {% break %}
+        {% endif %}
+      {% endfor %}
+    {% endif %}
     <!--
+    {% if page.comments %}
     <script id="dsq-count-scr" src="https://{{ site.disqus_account }}.disqus.com/count.js"></script>
     <script>
       var disqus_config = function () {
@@ -38,9 +62,8 @@
       (d.head || d.body).appendChild(s);
       })();    
   </script>
-  -->
   {% endif %}   
-
+  -->
     
     <!-- if jekyll.environment == "production" -->
     <!-- prod 
@@ -72,8 +95,6 @@
     {% endif %}
 
 
-
     {% if site.addthis_id %}
-      <!-- Go to www.addthis.com/dashboard to customize your tools -->
       <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid={{ site.addthis_id }}"></script>
     {% endif %}

@@ -2,10 +2,12 @@
 # slug is for URL and comments. Don't change once comments are committed
 slug: "buying a bike in vietnam"
 title: "Buying a bike in Vietnam"
+alt-title: 'The pitfalls, pros and cons.'
 description: An article for newbie bikers, sharing my research and experience about all the benefits and pitfalls of buying a bike and biking around Vietnam.
 author: Audrey Cassim
+theme: dark
 categories: ['Travel', 'Asia', 'Vietnam']
-tags: ['Featured', 'Travel', 'Vietnam', 'Adventure', 'Motorbike', 'Biking Tours', 'Honda Win']
+tags: ['Travel', 'Vietnam', 'Adventure', 'Motorbike', 'Biking Tours', 'Honda Win']
 comments: true
 images:
   - type: fullwidth
@@ -14,6 +16,9 @@ images:
     description: All you need to know about buying a bike in Vietnam
     location: 'Road from Na Trang to Hoi An, Vietnam' 
     height: 800px
+  - type: thumbnail
+    title: Choose your bike
+    url: choose-your-bike.jpg
 # Gallery types: fullwidth, large, feature
 gallery:
   sitegallery: chooseyourbike

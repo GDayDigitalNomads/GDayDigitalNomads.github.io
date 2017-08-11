@@ -17,6 +17,7 @@ environment-url: local.gdaydigitalnomads.com
 
 #Third parties
 google_analytics: "UA-98384350-1"
+google_captcha: 6LfoSycUAAAAAPJ-YaW7iR0vxjmusqbVNkVpTust
 addthis_id: ra-5949179a3d64ca1c
 disqus_account: local-gdaydigitalnomads
 
@@ -41,6 +42,11 @@ include: ["_pages"]
 exclude: ["node_modules","gulpfile.js","package.json","README.md","LICENSE","CNAME", "static"]
 keep_files: ["static"]
 permalink: pretty
+
+kramdown:
+  auto_ids: false
+  input: GFM
+
 collections:
   shop:
     output: true

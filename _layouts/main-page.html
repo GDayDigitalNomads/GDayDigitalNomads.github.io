@@ -17,10 +17,25 @@
     
     {{ content }}
 
-    {% include footer.html %}
+    <section class="body-content" id="contact">
 
+    {% include social-links.html %}
+
+    {% comment %}
+    {% assign subscribe_type = 2 %}
+    {% assign subscribe_heading = 'If you like our Site?' %}
+    {% assign subscribe_description = 'Subscribe to keep in touch' %}
+    {% assign subscribe_button = 'Subscribe' %}
+    {% include subscribe-fullwidth.html %}
+    {% endcomment %}
+
+    {% include contact-us.html %}
+    
+    </section>
   </div>
   <!-- end wrapper -->
+  {% include copyright.html %}
+
 
   {% include scripts.html %}
 

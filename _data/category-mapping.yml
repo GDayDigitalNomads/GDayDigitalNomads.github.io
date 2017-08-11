@@ -20,7 +20,7 @@
     url: '/blog/'
 
 - title: 'Services'
-  url: '/#services'
+  url: '/services/'
 
 - title: 'Yoga'
   url: '/yoga/'  
@@ -35,7 +35,6 @@
 
 - title: 'Travel'
   url: '/shop/'
-
 
 - title: 'Africa'
   url: '/blog/'

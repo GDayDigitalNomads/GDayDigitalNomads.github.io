@@ -317,6 +317,12 @@ h4.timeline-title {
 .p-top-30 {
   padding-top: 30px !important;
 }
+.p-top-40 {
+  padding-top: 40px !important;
+}
+.p-top-50 {
+  padding-top: 50px !important;
+}
 
 .p-bot-10 {
   padding-bottom: 10px !important;
@@ -327,6 +333,12 @@ h4.timeline-title {
 .p-bot-30 {
   padding-bottom: 30px !important;
 }
+.p-bot-40 {
+  padding-bottom: 40px !important;
+}
+.p-bot-50 {
+  padding-bottom: 50px !important;
+}
 .m-bot-50 {
   margin-bottom: 50px !important;
 }
@@ -335,6 +347,9 @@ h4.timeline-title {
 }
 .m-bot-10 {
   margin-bottom: 10px !important;
+}
+.m-bot-1 {
+  margin-bottom: 1px !important;
 }
 
 .custom-input {
@@ -422,7 +437,7 @@ h4.timeline-title {
 }
 
 .widget p {
-  line-height: 23px
+  line-height: 25px
 }
 
 a.subtitle {
@@ -486,4 +501,14 @@ a.subtitle {
 
 .banner {
   background-position: 0 0!important;
+}
+
+.g-captcha-subscribe {
+  float: left;
+}
+
+.subscribe_button {
+  float: left;
+  margin-left: 30px;
+  margin-top: 20px;
 }

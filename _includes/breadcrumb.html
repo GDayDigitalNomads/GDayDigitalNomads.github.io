@@ -4,7 +4,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
-                        <h4 class="text-uppercase">{{ page.title }}</h4>
+                        <h4 class="text-uppercase">{% if page.slug %}{{ page.slug }}{% else %}{{ page.title }}{% endif %}</h4>
                         <ol class="breadcrumb">
                             {% if page.breadcrumb %}
                                 {% for crumb in page.breadcrumb %}
@@ -28,7 +28,7 @@
                             {% endif %}
 
                             {% endfor %}
-                            <li class="active">{% if page.slug %}{{ page.slug }}{% else %}{{ page.title }}{% endif %}</li>
+                            <li class="active">{% if page.alt-title %}{{ page.alt-title }}{% elsif page.slug %}{{ page.slug }}{% else %}{{ page.title }}{% endif %}</li>
                             {% endif %}
                         </ol>
                     </div>

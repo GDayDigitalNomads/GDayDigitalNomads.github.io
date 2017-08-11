@@ -1,17 +1,3 @@
-
-
-    <!-- 3 articles - 3 columns -->
-    {% if section != '' %}
-      <div class="row ">
-        <div class="col-md-12">
-            <!-- Heading -->      
-            <div class="heading-title-alt2">
-                <h4 class="text-uppercase heading-border-bottom">{{ section }}</h4>
-            </div>
-          </div>
-      </div>            
-      {% endif %}
-
       {% assign section_ids = '' %}
       {% assign count = 0 %}
       {% assign counter = 0 %}
@@ -21,8 +7,8 @@
       {% endif %}
       {% for post in posts %}
       {% unless excluded contains post.id %} 
-      {% assign tags = post.tags | join: ',' | downcase %}
-      {% if tags contains target %} 
+      {% assign tags = post.tags | join: ',' | downcase | append: ',' %}
+      {% if tags contains target + ',' %} 
         <!-- MATCH FOR {{ post.id }} with tags {{ post.tags }}-->
         {% assign count = count | plus: 1 %}
         {% assign section_ids = section_ids | append: post.id | append: ',' %}
@@ -34,7 +20,20 @@
       {% endunless %}
       {% endfor %}
 
-      
+    
+{% if count > 0 %}
+    <!-- 3 articles - 3 columns -->
+    {% if section != '' %}
+      <div class="row ">
+        <div class="col-md-12">
+            <!-- Heading -->      
+            <div class="heading-title-alt2">
+                <h4 class="text-uppercase heading-border-bottom">{{ section }}</h4>
+            </div>
+          </div>
+      </div>            
+    {% endif %}
+  
       {% for post in posts %}
       {% if section_ids contains post.id %}
         {% assign mod = counter | modulo:3 %}
@@ -47,7 +46,7 @@
             <div class="post-single">
               <ul class="post-cat">
                 {% for cat in post.categories %}
-                <li><a href="/blog/{{ cat | downcase | replace: ' ','-' }}/">{{ cat | strip}}{%if forloop.last == false %},{% endif %} </a></li>
+                <li><a href="/blog/{{ cat | downcase }}/">{{ cat | strip | replace: '-', ' '}}{%if forloop.last == false %},{% endif %} </a></li>
                 {% endfor %}
               </ul> 
             <!-- Youtube, embedded, gallery, thumbnail, feature image -->
@@ -64,13 +63,29 @@
               {% elsif post.images %}
               <!-- Embedded image here -->
                   {% assign images = post.images | reverse %}
-                  {% for image in images %}
-                      {% if image.type == 'related' or image.type == 'thumbnail' or image.type == 'feature' %}
-                        <!-- found {{image.type}} image -->
-                            {% assign title = image.title %}
-                            {% unless image.title %}
-                                {% assign title = image.url | split: '_' | last | split: '.' | first | replace: '--', ', ' | replace: '-', ' ' | replace: '/', ' ' %}
-                            {% endunless %}                        
+                  {% assign image = '' %}
+
+                  {% for img in images %}
+                      {% if img.type =='related' %}
+                          {% assign image = img %}
+                          {% assign title = img.title %}
+                          {% unless img.title %}
+                            {% assign title = image.url | split: '_' | last | split: '.' | first | replace: '--', ', ' | replace: '-', ' ' | replace: '/', ' ' %}
+                          {% endunless %}
+                          <!-- Found related image - we should break now -->                                                    
+                          {% break %}
+                      {% elsif img.type =='thumbnail' %}
+                          {% assign image = img %}
+                          {% assign title = img.title %}
+                          {% unless image.title %}
+                            {% assign title = image.url | split: '_' | last | split: '.' | first | replace: '--', ', ' | replace: '-', ' ' | replace: '/', ' ' %}
+                          {% endunless %}                                                  
+                          <!-- Found thumb image -->                                                    
+                      {% endif %}
+                  {% endfor %}
+
+                  {% if image != '' %}
+                  <!-- found {{image.type}} image -->                
                             {% if post.alt-title %}
                             <div class="post-img title-img">
                               <a href="{{ post.url }}">
@@ -83,9 +98,9 @@
                             <img src="{{ site.post-image-url }}/{{ image.url }}" alt="{{ title }}">
                             </a>
                             {% endif %}
-                        {% break %}
-                      {% endif %}
-                  {% endfor %}
+                  {% else %}
+                  <!-- no image found -->
+                  {% endif %}
               {% endif %}
 
               
@@ -115,11 +130,14 @@
       {% endif %}
       {% endfor %}
 
+    {% if page.url contains '/blog/' %}
+    {% else %}
     <div class="row">
       <div class="inline-block text-center">
         <a href="/blog/" class="p-read-more">View all articles<i class="icon-arrows_slim_right"></i></a>
       </div>
     </div>
+    {% endif %}
 
-
+{% endif %}
 

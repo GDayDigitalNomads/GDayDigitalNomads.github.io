@@ -1,9 +1,9 @@
-        <section class="page-title background-title dark banner" style=" background-image: url('{{ site.image-url }}/{{ image.url}}'); {% if image.height and image.height != ''%}min-height: {{ image.height }}!important; overflow: hidden;{% endif %}">
+        <section class="page-title background-title {%if page.theme %}{{page.theme}}{% endif %}" style=" background-image: url('{{ site.image-url }}/{{ image.url}}'); {% if image.height and image.height != ''%}min-height: {{ image.height }}!important; overflow: hidden;background-position: 50% 50%;{% endif %}">
             <div class="container-mid">
                 <div class="container">
                     <div class="banner-box">
                         <h2 class="text-uppercase">{{ image.title }}</h2>
-                        <h4 class=light-txt>{{ image.description}}</h4>
+                        <h4 {%if page.theme and page.theme == 'dark' %}class="light-txt"{% endif %}>{{ image.description}}</h4>
                     </div>
                 </div>
             </div>

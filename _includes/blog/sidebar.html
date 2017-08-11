@@ -36,7 +36,7 @@
                                     <div class="post-single">
                                         <ul class="post-cat">
                                             {% for cat in post.categories %}
-                                            <li><a href="/blog/{{ cat | downcase | replace: ' ','-' }}/">{{ cat | strip }}{%if forloop.last == false %},{% endif %}</a></li>
+                                            <li><a href="/blog/{{ cat | downcase }}/">{{ cat | strip | replace: '-', ' ' }}{%if forloop.last == false %},{% endif %}</a></li>
                                             {% endfor %}
                                         </ul>
 
@@ -65,7 +65,8 @@
                                                   {% break %}
                                               {% elsif img.type =='thumbnail' %}
                                                   {% assign thumb = img %}
-                                                  {% unless image.title %}
+                                                  {% assign title = thumb.title %}
+                                                  {% unless thumb.title %}
                                                       {% assign title = image.url | split: '_' | last | split: '.' | first | replace: '--', ', ' | replace: '-', ' ' | replace: '/', ' ' %}
                                                   {% endunless %}                                                  
                                               {% endif %}
@@ -185,14 +186,16 @@
                                 </ul>
                             </div>
                          
-                            {% assign all_tags = site.data.tags | join: ',' |  downcase %}
-                            {% assign page_tags = page.tags | join ',' | downcase %}
+
+                            {% assign page_tags = page.tags | join: ',' | append: ',' %}
+                            {% assign all_tags = site.data.tags | join: ',' | append: ',' | append: page_tags  | append: ',' %}
                             {% for post in site.posts %}
-                                {% assign post_tags = post.tags | join: ',' | downcase %}
-                                {% assign all_tags = all_tags | append: ',' | append: post_tags %}
+                                {% assign post_tags = post.tags | join: ',' | append: ',' %}
+                                {% assign all_tags = all_tags | append: post_tags %} 
                             {% endfor%}
-                            {% assign tags = all_tags | split : ',' | uniq %}
-                            
+                            <!-- {{ all_tags }} -->
+                            {% assign tags = all_tags | replace: ',,,', ',' | replace: ',,', ',' | split : ',' | uniq %}
+
                             <!--tags widget-->
                             <div class="widget">
                                 <div class="heading-title-alt text-left heading-border-bottom">

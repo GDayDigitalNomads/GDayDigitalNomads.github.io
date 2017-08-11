@@ -76,8 +76,16 @@
 
                                 {% include blog/title.html %}
 
+                                {% if page.donate %}
+                                    {% include donate.html %}
+                                {% endif %}
+
                                 {{ content }}
                                 
+                                {% if page.donate %}
+                                    {% include donate.html %}
+                                {% endif %}
+
                                 {% include blog/close.html %}
                                 {% if page.comments and page.comments == true %}
                                     {% include blog/comments.html %}
@@ -96,10 +104,13 @@
         </div>
     </section>
 
-    {% include footer.html %}
-
-    </div>
-    <!-- end wrapper -->
+    <section class="body-content" id="contact">
+    {% include social-links.html %}
+    {% include contact-us.html %}
+    </section>
+  </div>
+  <!-- end wrapper -->
+  {% include copyright.html %}
 
   {% include scripts.html %}
 

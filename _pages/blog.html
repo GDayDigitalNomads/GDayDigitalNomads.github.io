@@ -2,6 +2,7 @@
 layout: blog-page
 title: Our Latest Articles from the road
 permalink: /blog/
+theme: dark
 breadcrumb:
   - url: /
     title: Home
@@ -9,10 +10,10 @@ breadcrumb:
     title: blog
     active: true
 image:
-    url: banners/hill.jpg
+    url: banners/blog-intro.jpg
     title: Welcome to our Blog
-    description: Our Latest Articles from the road
-    height: 600px    
+    description: "TRAVEL. EXPLORE. CREATE.<br />Latest Adventures, Lessons, Cool Ideas, Digital and Lifestyle Articles."
+    height: 650px    
 comments: false
 #video-html5:
 #  image: videos/lasvegas-poster.jpg
@@ -41,8 +42,29 @@ comments: false
     <div class="container">
     {% assign excluded = '' %}
 
-    {% assign section = 'Latest Adventures' %}
-    {% assign target = 'adventure' %}
+    {% assign section = 'Featured Articles' %}
+    {% assign target = 'featured' %}
+    {% assign order = 'reverse' %}
+    {% assign total = 3 %}
+
+    {% include blog/section.html %}
+
+    {% assign section = 'Latest Articles' %}
+    {% assign target = '' %}
+    {% assign total = 10 %}
+
+    {% include blog/section.html %}
+
+    {% comment %}
+
+    {% assign section = 'For Digital Nomads' %}
+    {% assign target = 'digital nomads' %}
+    {% assign total = 3 %}
+
+    {% include blog/section.html %}
+
+    {% assign section = 'For Traveling Yogis' %}
+    {% assign target = 'yoga' %}
     {% assign total = 3 %}
 
     {% include blog/section.html %}
@@ -51,20 +73,21 @@ comments: false
     {% assign target = 'featured app' %}
     {% assign total = 3 %}
 
-    {% include blog/section.html %}
+    {% include blog/section.html %}    
 
-
-    {% assign section = 'For Yogis' %}
-    {% assign target = 'yoga' %}
-    {% assign total = 3 %}
-
-    {% include blog/section.html %}
-
-    {% assign section = 'App Dev' %}
-    {% assign target = 'technology' %}
+    {% assign section = 'App Development' %}
+    {% assign target = 'app development' %}
     {% assign total = 9 %}
 
     {% include blog/section.html %}    
+
+    {% assign section = 'Archive' %}
+    {% assign target = '' %}
+    {% assign total = 100 %}
+
+    {% include blog/section.html %}    
+
+    {% endcomment %}
 
 
     </div>

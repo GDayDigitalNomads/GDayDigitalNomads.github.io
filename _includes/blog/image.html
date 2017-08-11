@@ -1,5 +1,5 @@
                             
-                            <div class="full-width {% if image.type == 'large' %}m-bot-50{% endif %}"{% if image.height and image.height != '' and image.height != false %} style="height: {{ image.height }}!important; overflow: hidden;"{% endif %}>
+                            <div class="full-width {% if image.type == 'large' %}m-bot-50{% elsif image.type == 'feature' %}m-bot-30{% endif %}"{% if image.height and image.height != '' and image.height != false %} style="height: {{ image.height }}!important; overflow: hidden;"{% endif %}>
                                 <img src="{{ site.post-image-url }}/{{ image.url }}" alt="{{ image.title }}">
                             </div>
                         

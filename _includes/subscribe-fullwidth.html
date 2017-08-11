@@ -1,0 +1,114 @@
+    {% unless subscribe_type %}
+        {% assign subscribe_type = 2 %}
+    {% endunless %}
+    {% unless subscribe_heading %}
+        {% assign subscribe_heading = 'Like our Site?' %}
+    {% endunless %}
+    {% unless subscribe_description %}
+        {% assign subscribe_description = 'Subscribe to our monthly newsletter' %}
+    {% endunless %}
+    {% unless subscribe_button %}
+        {% assign subscribe_button = 'Subscribe' %}
+    {% endunless %}
+
+            <div class="page-content-compact">
+            {% case subscribe_type %}
+                {% when 1 %}
+                <!--full width subscribe border box start-->
+                <div class="subscribe-box border-box  ">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="subscribe-info">
+                                    <h4>{{ subscribe_heading }}</h4>
+                                    <span>{{ subscribe_description }}</span>
+                                </div>
+                                <div class="subscribe-form">
+                                    <form class="form-inline">
+                                        <input type="text" class="form-control" placeholder="Enter your email address">
+                                        <!--<div id="captcha_subscribe" class="g-recaptcha g-captcha-subscribe" data-sitekey="{{ site.google_captcha }}" required data-error="Don't forget the Captcha"></div>-->
+                                        <!--<div class="subscribe_button">-->
+                                            <button type="submit" class="g-recaptcha btn btn-medium btn-rounded btn-dark-solid text-uppercase" data-sitekey="{{ site.google_captcha }}">{{subscribe_button}}</button>
+                                        <!--</div>-->
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>                
+                {% when 2 %}
+                <!--full width subscribe dark box start-->
+                <div class="subscribe-box dark-bg ">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="subscribe-info">
+                                    <h4 class="light-txt ">{{ subscribe_heading }}</h4>
+                                    <span class="light-txt ">{{ subscribe_description }}</span>
+                                </div>
+                                <div class="subscribe-form">
+                                    <form class="form-inline">
+                                        <input type="text" class="form-control" placeholder="Enter your email address">
+                                        <!--<div id="captcha_subscribe_dark" class="g-recaptcha g-captcha-subscribe" data-sitekey="{{ site.google_captcha }}" required data-error="Don't forget the Captcha"></div>-->
+                                        <!--<div class="subscribe_button">-->
+                                            <button type="submit" class="g-recaptcha btn btn-medium btn-rounded btn-theme-color text-uppercase" data-sitekey="{{ site.google_captcha }}">{{ subscribe_button }}</button>
+                                        <!--</div>-->
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>                
+                </div>
+            {% endcase %}
+            </div>
+            <!--full width subscribe dark box end-->
+
+            <div class="page-content">
+                <!--full width Subscribe center align start-->
+                <div class="subscribe-box gray-bg round-5 page-content text-center">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-8 col-md-offset-2">
+                                <div class="subscribe-info">
+                                    <h3 class="theme-color ">DON’T WANNA PURCHASE NOW? </h3>
+                                    <span class=" ">subscribe to get in touch </span>
+                                </div>
+                                <div class="subscribe-form">
+                                    <form class="form-inline">
+                                        <input type="text" class="form-control" placeholder="Enter your email address">
+                                        <button type="submit" class="btn btn-medium btn-rounded btn-dark-solid text-uppercase">
+                                            subscribe
+                                        </button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--full width Subscribe center align end-->
+            </div>
+
+
+            <!--full width Subscribe center align start-->
+            <div class="subscribe-box dark-bg page-content text-center">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-8 col-md-offset-2">
+                            <div class="subscribe-info">
+                                <h3 class="theme-color ">DON’T WANNA PURCHASE NOW? </h3>
+                                <span class=" light-txt ">subscribe to get in touch </span>
+                            </div>
+                            <div class="subscribe-form">
+                                <form class="form-inline">
+                                    <input type="text" class="form-control" placeholder="Enter your email address">
+                                    <button type="submit" class="btn btn-medium btn-rounded btn-theme-color text-uppercase">
+                                        subscribe
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--full width Subscribe center align end-->            
+        

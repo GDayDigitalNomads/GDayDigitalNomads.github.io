@@ -12,12 +12,10 @@
                             	<p>G'Day Digital Nomads was established to sponsor and create apps and ideas that can become catalysts for positive change.<br />No limits. Only aiming to make the world a better place through digital mediums.</p>
 							</div>
 						</div>
-						<div class="row">
-							<div class="col-md-5 col-md-offset-7 p-top-50">
-								<div class="post-desk">
-			                        <div class="embed-responsive- vdo-wrap- embed-responsive embed-responsive-4by3">
-			                            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/QR836G4Av2I" allowfullscreen></iframe>
-			                         </div>
+						<div class="row">			
+							<div class="col-md-5 col-md-offset-7 p-top-50" style="padding:0px">
+								<div class="full-width video-container">
+			                     	<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/QR836G4Av2I" allowfullscreen></iframe>
 								</div>
 							</div>
 						</div>
@@ -28,6 +26,27 @@
 
 
 	    	<!--OneVote-->
+	    	{% assign appName = 'onevote' %}
+	    	{% assign appLink = '/coming-soon/' %}
+	    	{% assign appSupportLink = '/coming-soon/' %}
+			{% for post in site.posts %}
+				{% if post.app and post.app == appName %}
+					{% assign appLink = post.url %}
+					{% if post.donate %}
+						{% for item in page.donate %}
+							{% if item.kickstarter %}
+								{% if item.kickstarter.first == '#'  %}
+									{% assign appSupportLink =  appLink + '/' + item.kickstarter %}
+								{% else %}
+									{% assign appSupportLink = appLink %}
+								{% endif %}
+								{% break %}
+							{% endif %}
+						{% endfor %}
+					{% endif %}
+					{% break %}
+				{% endif %}
+			{% endfor %}
             <div class="page-content-sm compact blue-feature-bg" >
                 <div class="container">
                     <div class="row">
@@ -56,8 +75,8 @@
 							</div>
 							<div class="fullwidth text-center">
 								<div class="inline-block m-top-10 m-bot-20">
-									<a href="/coming-soon/" class="btn btn-small btn-border-secondary-color">Support &nbsp;&nbsp;<i class="fa fa-bitcoin"></i></a>
-									<a href="/coming-soon/" class="btn btn-small btn-border-secondary-color ">More Info</a>	                            							
+									<a href="{{ appSupportLink }}" class="btn btn-small btn-border-secondary-color">Support &nbsp;&nbsp;<i class="fa fa-bitcoin"></i></a>
+									<a href="{{ appLink }}" class="btn btn-small btn-border-secondary-color ">More Info</a>	                            							
 								</div>						
 							</div>		                
                         </div>
@@ -68,6 +87,27 @@
 
 
     		<!--Berry Berry -->
+	    	{% assign appName = 'berry berry' %}
+	    	{% assign appLink = '/coming-soon/' %}
+	    	{% assign appSupportLink = '/coming-soon/' %}
+			{% for post in site.posts %}
+				{% if post.app and post.app == appName %}
+					{% assign appLink = post.url %}
+					{% if post.donate %}
+						{% for item in post.donate %}
+							{% if item.kickstarter %}
+								{% if item.kickstarter contains '#'  %}
+									{% assign appSupportLink =  appLink | append : item.kickstarter %}
+								{% else %}
+									{% assign appSupportLink = appLink %}
+								{% endif %}
+								{% break %}
+							{% endif %}
+						{% endfor %}
+					{% endif %}
+					{% break %}
+				{% endif %}
+			{% endfor %}    		
             <div class="page-content-sm compact berryberry" >
                 <div class="container">
                 	<div class="row">
@@ -80,7 +120,7 @@
 							<div class="heading-title-alt">
 								<p class="light-txt">It is generally accepted that English today is arguably the most important language for people to learn. Unfortunately, many non-native speakers around the world have very limited access to well-structured lessons taught by native English teachers.</p>
 								<p class="light-txt">Hence we created Berry Berry; a fun and affordable new online platform where anyone can come to receive easy to follow and progressive game-based English lessons where newly acquired skills can be practiced with native English speakers.</p>
-								<p class="light-txt">By teaming up with qualified English teachers with more than 50 years of shared expertise, and integrative software that allows for voice recognition assessment, conversation transcripts and quantitative reporting among many other features we have developed a comprehensive EAL programme that will ensure that instructors have the support they need to provide meaningful and free-flowing conversations.</p>
+								<p class="light-txt">By teaming up with qualified English teachers with more than 50 years of shared expertise, and integrative software that allows for voice recognition assessment, conversation transcripts and quantitative reporting among many other features we have developed a comprehensive EAL programme that will ensure that instructors have the support they need to provide meaningful and free-flowing conversations for children and adults alike anywhere in the world.</p>
 								<!--<p class="light-txt">We are excited to see all of our hard work beginning to flourish and with your support we are hoping to bring this great new resource to world.</p>-->
 							</div>
                         </div>
@@ -91,16 +131,16 @@
 				    		</div>
                         </div>-->
                         <div class="col-md-6">
-                            <div class="responsive-img  app-img-botto p-top-10">
+                            <div class="responsive-img  app-img-botto ">
 								<img src="{{ site.static-image-url }}/app/english-kids-coming-soon.jpg" alt="" />
                             </div>
                         </div>                        
                         <div class="row">
 	                        <div class="col-md-12 p-top-30">
 								<div class="fullwidth text-center">
-									<div class="inline-block m-bot-50">
-										<a href="/coming-soon/" class="btn btn-small btn-border-secondary-color">Support &nbsp;&nbsp;<i class="fa fa-bitcoin"></i></a>
-										<a href="/coming-soon/" class="btn btn-small btn-border-secondary-color">More Info</a>	                            							                            							
+									<div class="inline-block m-bot-50"
+		>								<a href="{{ appSupportLink }}" class="btn btn-small btn-border-secondary-color">Support &nbsp;&nbsp;<i class="fa fa-bitcoin"></i></a>
+										<a href="{{ appLink }}" class="btn btn-small btn-border-secondary-color">More Info</a>	                            							                            							
 									</div>					
 								</div>			                        
 	                        </div>
@@ -111,6 +151,27 @@
             <!--feature-->
 
     		<!--Share Vibrations-->
+	    	{% assign appName = 'linknsync' %}
+	    	{% assign appLink = '/coming-soon/' %}
+	    	{% assign appSupportLink = '/coming-soon/' %}
+			{% for post in site.posts %}
+				{% if post.app and post.app == appName %}
+					{% assign appLink = post.url %}
+					{% if post.donate %}
+						{% for item in post.donate %}
+							{% if item.kickstarter %}
+								{% if item.kickstarter contains '#'  %}
+									{% assign appSupportLink =  appLink | append : item.kickstarter %}
+								{% else %}
+									{% assign appSupportLink = appLink %}
+								{% endif %}
+								{% break %}
+							{% endif %}
+						{% endfor %}
+					{% endif %}
+					{% break %}
+				{% endif %}
+			{% endfor %}      		
             <div class="page-content-sm compact dark-feature theawakening" >
                 <div class="container">
                     <div class="row">
@@ -126,16 +187,12 @@
 								<p class="light-txt">However the idea quickly grew into a platform we hope to be used globally for Media Producer Broadcasting, Synchronised Meditations, Yoga and Sound Therapy.</p>
 								<p class="light-txt">The basic premise: Sound is the first sense we develop as infants and is the most powerful sense we have to elicit emotions. Using basic principles in physics such as harmonics, constructive wave formations, Binaural Beats (perceived sound differentials) and the fact that the interaction of individuals when combined produce a total effect that is greater than the sum of any individual contributor (synergism) we can create a stronger manifestation of these emotions with participants across the globe. Very Hippy, we know, but we have high hopes for this as a medium for Global Healing.</p>
 							</div>
-                        </div>
-                        <div class="row">
-	                        <div class="col-md-12">
-								<div class="fullwidth text-center">
-									<div class="inline-block m-bot-50">
-										<a href="/coming-soon/" class="btn btn-small btn-light-solid">Support &nbsp;&nbsp;<i class="fa fa-bitcoin"></i></a>
-										<a href="/coming-soon/" class="btn btn-small btn-light-solid ">More Info</a>	                            							                            							
-									</div>					
-								</div>			                        
-	                        </div>
+							<div class="fullwidth text-center">
+								<div class="inline-block m-bot-50">
+									<a href="{{ appSupportLink }}" class="btn btn-small btn-light-solid">Support &nbsp;&nbsp;<i class="fa fa-bitcoin"></i></a>
+									<a href="{{ appLink }}" class="btn btn-small btn-light-solid ">More Info</a>	                            							                            							
+								</div>					
+							</div>			                        							
                         </div>
                     </div>
                 </div>
@@ -143,6 +200,27 @@
             <!--feature-->
 
 	    	<!--Solar-->
+	    	{% assign appName = 'p2p solar' %}
+	    	{% assign appLink = '/coming-soon/' %}
+	    	{% assign appSupportLink = '/coming-soon/' %}
+			{% for post in site.posts %}
+				{% if post.app and post.app == appName %}
+					{% assign appLink = post.url %}
+					{% if post.donate %}
+						{% for item in post.donate %}
+							{% if item.kickstarter %}
+								{% if item.kickstarter contains '#'  %}
+									{% assign appSupportLink =  appLink | append : item.kickstarter %}
+								{% else %}
+									{% assign appSupportLink = appLink %}
+								{% endif %}
+								{% break %}
+							{% endif %}
+						{% endfor %}
+					{% endif %}
+					{% break %}
+				{% endif %}
+			{% endfor %}  	    	
             <div class="page-content-sm compact" >
                 <div class="container">
                     <div class="row">
@@ -169,8 +247,8 @@
 							</div>       
 							<div class="fullwidth text-center">
 								<div class="inline-block m-top-10 m-bot-20">
-									<a href="/coming-soon/" class="btn btn-small btn-border-secondary-color ">Support &nbsp;&nbsp;<i class="fa fa-bitcoin"></i></a>
-									<a href="/coming-soon/" class="btn btn-small btn-border-secondary-color ">More Info</a>	                            							
+									<a href="{{ appSupportLink }}" class="btn btn-small btn-border-secondary-color ">Support &nbsp;&nbsp;<i class="fa fa-bitcoin"></i></a>
+									<a href="{{ appLink }}" class="btn btn-small btn-border-secondary-color ">More Info</a>	                            							
 								</div>								
 							</div>                
 							
@@ -188,6 +266,27 @@
             <!--feature-->
 
 	    	<!--P2P Banking-->
+	    	{% assign appName = 'p2p banking' %}
+	    	{% assign appLink = '/coming-soon/' %}
+	    	{% assign appSupportLink = '/coming-soon/' %}
+			{% for post in site.posts %}
+				{% if post.app and post.app == appName %}
+					{% assign appLink = post.url %}
+					{% if post.donate %}
+						{% for item in post.donate %}
+							{% if item.kickstarter %}
+								{% if item.kickstarter contains '#'  %}
+									{% assign appSupportLink =  appLink | append : item.kickstarter %}
+								{% else %}
+									{% assign appSupportLink = appLink %}
+								{% endif %}
+								{% break %}
+							{% endif %}
+						{% endfor %}
+					{% endif %}
+					{% break %}
+				{% endif %}
+			{% endfor %}  
             <div class="page-content-sm compact  dark-feature dark-feature-bg" >
                 <div class="container">
                     <div class="row">  
@@ -217,8 +316,8 @@
 							</div>					
 							<div class="fullwidth text-center">
 								<div class="inline-block m-top-10 m-bot-50">
-									<a href="/coming-soon/" class="btn btn-small btn-border-secondary-color ">Support &nbsp;&nbsp;<i class="fa fa-bitcoin"></i></a>
-									<a href="/coming-soon/" class="btn btn-small btn-border-secondary-color">More Info</a>	                            							
+									<a href="{{ appSupportLink }}" class="btn btn-small btn-border-secondary-color ">Support &nbsp;&nbsp;<i class="fa fa-bitcoin"></i></a>
+									<a href="{{ appLink }}" class="btn btn-small btn-border-secondary-color">More Info</a>	                            							
 								</div>
 							</div>
 						</div>								                   

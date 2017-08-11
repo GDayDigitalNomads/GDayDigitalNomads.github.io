@@ -17,6 +17,7 @@ environment-url: www.gdaydigitalnomads.com
 
 #Third parties
 google_analytics: "UA-98384350-1"
+google_captcha: 6LfoSycUAAAAAPJ-YaW7iR0vxjmusqbVNkVpTust
 addthis_id: ra-5949179a3d64ca1c
 disqus_account: gdaydigitalnomads
 
@@ -40,13 +41,18 @@ markdown: kramdown
 include: ["_pages"]
 exclude: ["node_modules","gulpfile.js","package.json","README.md","LICENSE","CNAME"]
 permalink: pretty
+
+kramdown:
+  auto_ids: false
+  input: GFM
+
 collections:
   shop:
     output: true
     permalink: /shop/:categories/:title.html  
   posts:
     output: true
-    permalink: /blog/:categories/:title.html      
+    permalink: /blog/:categories/:slug.html      
   profiles:
     output: true
     permalink: /profiles/:name.html          

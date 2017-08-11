@@ -1,21 +1,25 @@
-<section class="video-parallax overlay-background vertical-align text-center"  {% if page.video-html5.height %} style="height: {{ page.video-html5.height }}!important;"{% endif %}">
-            <div class="overlay-block"></div>
-
-                <div class="video-wrap">
+        <!--hero video section-->
+        <div id="fullscreen-banner" class="video-parallax inline-block">
+            <div class="container vertical-middle text-center clearfix">
+                <div class="emphasis-title">
+                    <h1 class="text-uppercase light-txt">{% if page.video-html5.title %}{{ page.video-html5.title }}{% else %}{{ page.title }}{% endif%}</h1>
+                    <h3 class="light-txt">{% if page.video-html5.description %}{{ page.video-html5.description }}{% else %}{{ page.description }}{% endif%}</h3>                    
+                </div>
+            </div>
+            <div class="video-wrap">
                     <video poster="{{ site.resource-url }}/{{ page.video-html5.image }}"  preload="auto" loop autoplay muted>
                         <source src='{{ site.resource-url }}/{{ page.video-html5.mp4}}' type='video/mp4'>
                         <source src='{{ site.resource-url }}/{{ page.video-html5.webm}}' type='video/webm'>
                     </video>
-                </div>
-            <!--video source end-->
-
-            <div class="container-mid">
-                <div class="container">
-                    <div class="banner-box">
-                        <h1 class="text-uppercase light-txt">{% if page.video-html5.title %}{{ page.video-html5.title }}{% else %}{{ page.title }}{% endif%}</h1>
-                        <h3 class="text-uppercase light-txt">{% if page.video-html5.description %}{{ page.video-html5.description }}{% else %}{{ page.description }}{% endif%}</h3>
-                    </div>
-                </div>
+                <div class="video-overlay"></div>
             </div>
-
-</section>
+            <!--scroll down-->
+            <div class="banner-scroll">
+                <a href="#start" data-scroll>
+                    <span class="scroll-down"></span>
+                    scroll
+                </a>
+            </div>
+            <!--scroll down-->
+        </div>
+        <!--hero video section-->

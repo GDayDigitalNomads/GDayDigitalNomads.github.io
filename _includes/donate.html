@@ -1,0 +1,40 @@
+<div class="row p-bot-20">
+	{% for item in page.donate %}
+		{% if item.paypal %}
+	<div class="col-md-3">
+			<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+			<input type="hidden" name="cmd" value="_s-xclick">
+			<input type="hidden" name="hosted_button_id" value="{{ item.paypal }}">
+			<input type="image" src="https://www.paypalobjects.com/en_AU/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal – The safer, easier way to pay online!">
+			<img alt="" border="0" src="https://www.paypalobjects.com/en_AU/i/scr/pixel.gif" width="1" height="1" title="PayPal or Card donations">
+		</form>
+	</div>
+	{% elsif item.kickstarter %}
+	<div class="col-md-3">
+		<a href="{{ item.kickstarter }}" alt="Kickstarter Campaign"><img src="{{site.static-image-url}}/kickstarter-logo-light.png" alt="Kickstater Campaign">Our Campaign</a>
+	</div>
+	{% elsif item.bitcoin %}
+	
+	{% if bitcoinloaded %}
+	{% else %}
+		<div id="bitcoin-address-template" class="bitcoin-address-container" style="display: none">
+		    <div><span class="bitcoin-address"></span></div>
+		    <a href="#" class="bitcoin-address-action bitcoin-address-action-send"><i class="fa fa-btc">&nbsp;</i>Bitcoin wallet</a>&nbsp;&nbsp;
+		    <a href="#" class="bitcoin-address-action bitcoin-address-action-copy"><i class="fa fa-copy">&nbsp;</i>Copy</a>&nbsp;&nbsp;
+		    <a href="#" class="bitcoin-address-action bitcoin-address-action-qr"><i class="fa fa-qrcode">&nbsp;</i>QR code</a>
+		    <div class="bitcoin-action-hint bitcoin-action-hint-copy p-top-10" style="display: none">
+		        Press CTRL + C or &#x2318; + C.
+		    </div>
+		    <div class="bitcoin-action-hint bitcoin-action-hint-qr p-top-20" style="display: none">
+		        <div class="bitcoin-address-qr-container"></div>
+		    </div>
+		</div>
+		{% assign bitcoinloaded = true %}
+	{% endif %}
+
+	<div class="col-md-6">
+		<strong class="bitcoin-address" data-bc-address="{{ item.bitcoin }}" {% if page.slug %}data-bc-label="{{ page.slug }}" {% endif %}data-bc-message="{{ page.title }}">{{ item.bitcoin }}</strong>
+	</div>		
+	{% endif %}
+	{% endfor %}
+</div>
