@@ -35,6 +35,8 @@ social:
     url: https://plus.google.com/b/105685917314373457989/105685917314373457989
   - title: github
     url: https://github.com/GDayDigitalNomads
+  - title: linkedin
+    url: https://www.linkedin.com/company-beta/13348905/    
 
 # Build settings
 markdown: kramdown

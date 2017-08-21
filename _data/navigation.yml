@@ -36,7 +36,7 @@
   description: "Recent posts on digital nomadic life around the world"
 
 - title: "Services"
-  url: "/services/#services"
+  url: "/services/"
   description: "Our services"  
   dropdown:
   - title: "Web Design & Development"
