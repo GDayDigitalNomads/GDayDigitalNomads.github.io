@@ -193,7 +193,7 @@ Country 	| Av. Living Costs (month) | Av. Income (month) | Possible Extras
 --- 		| --- 					| --- 					| ---
 Cambodia 	| $600 - 800 USD 		| $700 - 1000 USD 		| -
 China 		| $800 - 1000 USD 		| $1,150 - 2,600 USD 	| Free Housing
-Hong King 	| $2,300 - 3,000 USD 	| $2,300 - 3,000 USD 	| - 
+Hong Kong 	| $2,300 - 3,000 USD 	| $2,300 - 3,000 USD 	| - 
 Indonesia 	| $550 - 900 USD 		| $700 - 1,100 USD 		| - 
 Japan 		| $1,700 - 2,600 USD 	| $2,250 - 2,600 USD 	| Free Housing
 Kazakhstan 	| $800 - 1,000 USD 		| $400 - 1,500 USD 		| Free Housing / Flights
