@@ -17,7 +17,7 @@ images:
     title: "Do you Speak English?"    
   - type: thumbnail
     url: english/do-you-speak-english-thumb.jpg
-    title: "Do you Speak English?"        
+    title: "Do you Speak English?"       
 ---
 {::options auto_ids="true" /}
 If you have not traveled much in your life, my suggestions is go. Go now. Singles, Couples, Families, nothing enriches the soul like traveling through the world we live in. And there is possibly no better way to do this than through the opportunities created from Teaching English overseas.
@@ -32,19 +32,20 @@ This list is in no particular order - what makes a good adventure is not the mon
 {: class="p-bot-0 m-bot-0"}
 ## Top 12 Places to Teach English on the Planet
 
-1. [**Vietnam** : Beaches, Rivers, Buddhist pagodas and Mountain Tops](#vietnam),<br />
-2. [**South Korea** : Buddhist temples, age-old traditions and culture](#south-korea),<br />
-3. [**China** : The Oldest Civilisation on Earth](#china),<br />
-4. [**Japan** : A pride in constant renewal and reinvention ](#japan),<br />
-5. [**Taiwan** : Rich cultural heritage with a High Tech Economy](#taiwan),<br />
-6. [**Gulf Arab States** : Saudi Arabia, U.A.E., Qatar, Oman, Kuwait, Bahrain](#gulf-arab-states),<br />
-7. [**Nicaragua** : Land of Lakes & Volcanoes](#nicaragua),<br />
-8. [**Columbia** : Fastest growing economies in Latin America](#columbia),<br />
-9. [**Czech Republic** : Land of Castles & Beer](#czech-republic),<br />
-10. [**Poland** : A Rising Economic Star from Old Europe](#poland),<br />
-11. [**Brazil** : A MUST SEE Country. Seriously.](#brazil),<br />
-12. [**Spain** : Home of Tapas, Flamenco & Lifestyle](#spain)<br /><br />
-**[*Statistics on English Teachers by Country](#statistics-on-english-teachers-by-country)**{: class="underline"}
+1. [**Vietnam** : Beaches, Rivers, Buddhist pagodas and Mountain Tops](#vietnam){: data-scroll="true"},<br />
+2. [**South Korea** : Buddhist temples, age-old traditions and culture](#south-korea){: data-scroll="true"},<br />
+3. [**China** : The Oldest Civilisation on Earth](#china){: data-scroll="true"},<br />
+4. [**Japan** : A pride in constant renewal and reinvention ](#japan){: data-scroll="true"},<br />
+5. [**Taiwan** : Rich cultural heritage with a High Tech Economy](#taiwan){: data-scroll="true"},<br />
+6. [**Gulf Arab States** : Saudi Arabia, U.A.E., Qatar, Oman, Kuwait, Bahrain](#gulf-arab-states){: data-scroll="true"},<br />
+7. [**Nicaragua** : Land of Lakes & Volcanoes](#nicaragua){: data-scroll="true"},<br />
+8. [**Columbia** : Fastest growing economies in Latin America](#columbia){: data-scroll="true"},<br />
+9. [**Czech Republic** : Land of Castles & Beer](#czech-republic){: data-scroll="true"},<br />
+10. [**Poland** : A Rising Economic Star from Old Europe](#poland){: data-scroll="true"},<br />
+11. [**Brazil** : A MUST SEE Country. Seriously.](#brazil){: data-scroll="true"},<br />
+12. [**Spain** : Home of Tapas, Flamenco & Lifestyle](#spain){: data-scroll="true"}
+
+**[* Statistics on English Teachers by Country](#statistics-on-english-teachers-by-country){: data-scroll="true"}**{: .underline}
 
 ### Vietnam
 {: class="m-bot-1 p-top-20 theme-color"}

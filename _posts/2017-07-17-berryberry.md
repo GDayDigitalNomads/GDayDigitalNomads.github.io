@@ -11,8 +11,8 @@ tags: ['Featured App', 'Promoted App', 'Digital Nomads', 'English', 'English Lan
 comments: true
 donate:
   - paypal: F5PSYQ574ZEXL
-  - kickstarter: '#donate'
-  - bitcoin: 1MXPpdf3PnJZV7XxQPAk15fipR7PnoRWfo
+  - kickstarter: '/coming-soon/'
+  - bitcoin: 1BRg2K5mYT7aBMB3w7mCyRzCKJcCwMBZuq
 images:
   - type: feature
     url: kid-on-computer.jpg
