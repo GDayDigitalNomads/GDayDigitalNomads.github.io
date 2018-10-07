@@ -22,22 +22,6 @@
     <script src="{{ site.resource-url }}/vendor/touchspin/touchspin.js"></script>
     <script src="{{ site.resource-url }}/vendor/visible/visible.js"></script>
     <script src="{{ site.resource-url }}/vendor/wow/wow.min.js"></script>
-    <script type="text/javascript">
-      var CaptchaCallback = function() {
-        
-        if(document.getElementById("captcha_subscribe_dark"))
-          grecaptcha.render('captcha_subscribe_dark', {'sitekey' : '{{site.google_captcha}}', 'theme': 'dark'})
-        
-        if(document.getElementById("captcha_subscribe"))
-          grecaptcha.render('captcha_subscribe', {'sitekey' : '{{site.google_captcha}}'})
-        
-        if(document.getElementById("captcha_contact"))
-          grecaptcha.render('captcha_contact', {'sitekey' : '{{ site.google_captcha }}'})
-
-      }
-    </script>
-
-    <script src="https://www.google.com/recaptcha/api.js?onload=CaptchaCallback&render=explicit" async defer"></script>
 
     {% if page.donate %}
       {% for item in page.donate %}
