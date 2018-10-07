@@ -569,7 +569,7 @@
          Contact form
          ===============================================*/
 
-        initMailer();
+        // initMailer();
 
     });
 
@@ -617,7 +617,7 @@
             
             e.preventDefault();
 
-            $.post(url, $form).done(function(r) {
+            $.post(url, {message: 'hello gday'}).done(function(r) {
                 showMailerResponse($form, $msg, "Thank you. To prevent span please verify you email address. Email from FORMSPREE.");
             }).fail(function() {
                 showMailerResponse(null, $msg, "Woops. There is something wrong, try again!", "warning");

@@ -1,4 +1,4 @@
-            <div class="page-content">
+            <div class="page-content" id="contact">
 
                 <div class="container">
 
@@ -9,7 +9,7 @@
                     <div class="row">
 
                         <div class="col-md-10 col-md-offset-1">
-                            <form class="contact-comments js-Mailer" method="post">
+                            <form class="contact-comments" method="post" action="http://formspree.io/enquiries@gdaydigitalnomads.com">
                                 <div class="row">
 
                                     <div class="col-md-6 ">
@@ -26,20 +26,19 @@
                                             <input type="phone" name="phone" class=" form-control" placeholder="Phone" maxlength="20">
                                             <div class="help-block with-errors"></div>
                                         </div>                                        
-                                        <div class="form-group">
-                                            <input type="text" name="subject" id="subject" class=" form-control" placeholder="Subject" maxlength="100">
-                                        </div>
                                     </div>
 
                                     <div class="col-md-6 form-group">
                                         <div class="form-group">
+                                            <input type="text" name="subject" id="subject" class=" form-control" placeholder="Subject" maxlength="100">
+                                        </div>
+                                        <div class="form-group">
                                             <textarea name="comments" class="cmnt-text form-control" placeholder="Comments" maxlength="500"></textarea>
                                         </div>
-                                        <div id="captcha_contact" class="g-recaptcha" data-sitekey="{{ site.google_captcha }}" required data-error="Don't forget the Captcha"></div>
                                     </div>
                                     <div class="col-md-12">
                                         <div class="form-group full-width">
-                                            <button type="submit" class="g-recaptcha btn btn-small btn-dark-solid" data-sitekey="{{ site.google_captcha }}">Send Message</button>
+                                            <button type="submit" class="btn btn-small btn-dark-solid">Send Message</button>
                                         </div>
                                     </div>
                                 </div>
