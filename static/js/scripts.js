@@ -577,7 +577,9 @@
         // TODO
 
     function initMailer() {
-        var url = 'https://api.gdaydigitalnomads.com/api/mailer'
+        // var url = 'https://api.gdaydigitalnomads.com/api/mailer'
+        var url = 'http://formspree.io/enquiries@gdaydigitalnomads.com'
+
 
         $.getJSON('//freegeoip.net/json/?callback=?', function(data) {
             $("#user-meta").val(JSON.stringify(data, null, 2))
@@ -615,16 +617,10 @@
             
             e.preventDefault();
 
-            $.post(url, $form.serialize()
-            ).done(function(r) {
-                var res = JSON.parse(r);
-                if (res.success == true) {
-                    showMailerResponse($form, $msg, "Thank you. Your message has been sent.");
-                } else {
-                    showMailerResponse($form, $msg, "Woops. There is something wrong, try again!", "warning");
-                }
+            $.post(url, $form).done(function(r) {
+                showMailerResponse($form, $msg, "Thank you. To prevent span please verify you email address. Email from FORMSPREE.");
             }).fail(function() {
-                showMailerResponse(null, $msg, "Oh no! Failed!", "warning");
+                showMailerResponse(null, $msg, "Woops. There is something wrong, try again!", "warning");
             })
         });
     }
