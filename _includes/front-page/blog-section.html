@@ -2,34 +2,25 @@
 	<div class="page-content-sm">
 		<div class="container">
 
-			<!-- Heading -->			
+			<!-- Heading -->
 			<div class="heading-title-alt text-center">
-				<h3 class="text-uppercase">Latest Adventures</h3>
-				<p class="half-txt p-top-10">Our Adventures and Insights from the road</p>
+				<h3 class="text-uppercase">Latest Articles</h3>
 			</div>
-			<!-- Heading -->			
-			
+			<!-- Heading -->
+
 
     {% assign excluded = '' %}
 
     {% assign section = '' %}
     {% assign target = 'featured' %}
     {% assign order = 'reverse' %}
-    {% assign total = 3 %}
+    {% assign total = 9 %}
 
     {% include blog/section.html %}
 
 	{% assign _galleries = 'top100' | split: ',' %}
 	{% include front-page/image-carousel.html %}
 
-	{% comment %}
-    {% assign section = 'Featured Apps' %}
-    {% assign target = 'featured app' %}
-    {% assign total = 3 %}
-
-    {% include blog/section.html %}
-
-	{% endcomment %}
 		</div>
 	</div>
 </section>

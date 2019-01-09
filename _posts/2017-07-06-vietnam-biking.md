@@ -7,14 +7,14 @@ description: An article for newbie bikers, sharing my research and experience ab
 author: Audrey Cassim
 theme: dark
 categories: ['Travel', 'Asia', 'Vietnam']
-tags: ['Travel', 'Vietnam', 'Adventure', 'Motorbike', 'Biking Tours', 'Honda Win']
+tags: ['Featured', 'Travel', 'Vietnam', 'Adventure', 'Motorbike', 'Biking Tours', 'Honda Win']
 comments: true
 images:
   - type: fullwidth
     url: posts/vietnam-road.jpg
     title: On the road in Vietnam
     description: All you need to know about buying a bike in Vietnam
-    location: 'Road from Na Trang to Hoi An, Vietnam' 
+    location: 'Road from Na Trang to Hoi An, Vietnam'
     height: 800px
   - type: thumbnail
     title: Choose your bike
@@ -62,7 +62,7 @@ Our bike costs us $300US and we spent around $70 for mechanics and parts over th
 
 #### From a shop
 
-Be Careful with the bike rebuild by a shop: From our experience, they often try to pass off chinese copies - beware, the black spraypainted bike! You don't know what it is. Not saying it is bad quality, just be sure to check. The shops we trusted the most were [Style Motorbikes](http://www.stylemotorbikes.com/), who gave me a free driving lesson and good advices, and [Tigit Motorbikes](https://www.tigitmotorbikes.com/) from other backpackers. 
+Be Careful with the bike rebuild by a shop: From our experience, they often try to pass off chinese copies - beware, the black spraypainted bike! You don't know what it is. Not saying it is bad quality, just be sure to check. The shops we trusted the most were [Style Motorbikes](http://www.stylemotorbikes.com/), who gave me a free driving lesson and good advices, and [Tigit Motorbikes](https://www.tigitmotorbikes.com/) from other backpackers.
 
 
 #### From a Traveler
@@ -76,22 +76,22 @@ Have a look on :
     * [Vietnam Motorcycle For Sale](https://www.facebook.com/groups/350783411791258/)
  * Classified advertisements websites
     * [Craigslist](https://vietnam.craigslist.org/search/mca?lang=en&cc=us)  
-    * [Travel Swop](http://www.travelswop.com/vietnam/ho-chi-minh-city/) 
+    * [Travel Swop](http://www.travelswop.com/vietnam/ho-chi-minh-city/)
  * Hostels : Many hostels also have flyers about travelers leaving and wanting to pass their bike on.
- * Rental, if you're travel less than a month, check with [style motorbikes](http://www.stylemotorbikes.com/), they have shops in HCM and Hanoi, so you can do the trip from one city and let your bike to the other. 
- * Hire a driver, if you are less confident to ride. It is good way to do it safely. Check out [Easy-rider](http://www.easy-riders.net/), they do a lot of trip short or long, many around Hoi An and Da Lat. 
+ * Rental, if you're travel less than a month, check with [style motorbikes](http://www.stylemotorbikes.com/), they have shops in HCM and Hanoi, so you can do the trip from one city and let your bike to the other.
+ * Hire a driver, if you are less confident to ride. It is good way to do it safely. Check out [Easy-rider](http://www.easy-riders.net/), they do a lot of trip short or long, many around Hoi An and Da Lat.
 
 ### Before you say YES, check the mechanics
 
-If you are new, try to find a friend who knows a little bit about bikes, or find a mechanic that can check it over for you. We found most mechanics to actually be very honest and valuable. And test drive it thoroughly. 
+If you are new, try to find a friend who knows a little bit about bikes, or find a mechanic that can check it over for you. We found most mechanics to actually be very honest and valuable. And test drive it thoroughly.
  * Check the Brakes;
  * Check the Transmission;
  * Check the Suspension;
  * Check the throttle and the motor;
  * Check the Electricals - we missed this one, and spent alot getting new lights and batteries for bad wiring.
 {: .circle-list .m-bot-30}
- 
-Our original plan was to buy a bike each, but we met several couples who did the trip in tandem. For this reason, and also at the insistance of my partner who saw me drive after several driving lessons and decided emphatically that I would not come back alive... 
+
+Our original plan was to buy a bike each, but we met several couples who did the trip in tandem. For this reason, and also at the insistance of my partner who saw me drive after several driving lessons and decided emphatically that I would not come back alive...
 
 {::options parse_block_html="true" /}
 <div class="blog-post">
@@ -111,19 +111,8 @@ Take your time when buying a bike; don’t be pushed into buying something you a
 
 Also, driving in the North is far more tretcherous, mountains a steeper, its wetter, and roads can be attroucous. So leave as much luggage as you can in Hanoi if you attempt this!
 
-Few articles for more details : 
+Few articles for more details :
 {: .circle-list .m-bot-10}
  * [Gt-rider.com](https://www.gt-rider.com/se-asia-motorcycling/threads/the-truth-about-buying-and-selling-chinese-honda-wins-in-vietnam.11059/)
  * [offroadvietnam.com](https://offroadvietnam.com/motorcycle-rentals/road-bikes/chinese-copy-of-the-honda-win-thingyou-should-know")
- * [clickspace.vn](http://clickspace.vn/what-kind-of-motorbike-to-buy-in-hanoi-part-1/) 
-
-
-
-                                    
-
-
-
-
-
- 
-
+ * [clickspace.vn](http://clickspace.vn/what-kind-of-motorbike-to-buy-in-hanoi-part-1/)
