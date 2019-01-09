@@ -29,13 +29,13 @@ social:
   - title: instagram
     url: https://instagram.com/gdaytravelers
   - title: youtube
-    url: https://youtube.com/channel/UCsDgPi0tRpAv6YIMbzgIdnA    
+    url: https://youtube.com/channel/UCsDgPi0tRpAv6YIMbzgIdnA
   - title: google-plus
     url: https://plus.google.com/b/105685917314373457989/105685917314373457989
   - title: github
     url: https://github.com/GDayDigitalNomads
   - title: linkedin
-    url: https://www.linkedin.com/company-beta/13348905/    
+    url: https://www.linkedin.com/company-beta/13348905/
 
 # Build settings
 markdown: kramdown
@@ -48,27 +48,19 @@ kramdown:
   input: GFM
 
 collections:
-  shop:
-    output: true
-    permalink: /shop/:categories/:title.html  
   posts:
     output: true
-    permalink: /blog/:categories/:slug.html      
+    permalink: /blog/:categories/:slug.html
   profiles:
     output: true
-    permalink: /profiles/:name.html          
+    permalink: /profiles/:name.html
 
 defaults:
   - scope:
       path: ""
-      type: shop
-    values:
-      layout: product
-  - scope:
-      path: ""
       type: profiles
     values:
-      layout: template      
+      layout: template
   - scope:
       path: ""
       type: posts

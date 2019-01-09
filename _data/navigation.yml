@@ -2,80 +2,17 @@
   url: "/#home"
   description: "GDay Digital Nomads Home Page"
 
-- title: "Featured Apps"
-  url: "/#featured-apps"
-  description: "Latest Apps worth supporting"
-#  dropdown:
-#  - title: "OneVote"
-#    url: "/#one-vote"
-#    description: "Democracy in an App"
-#    class: camelcase
-#  - title: "Link'n'Sync"
-#    url: "/#link-n-sync"
-#    description: "Synchronously sharing media on all your devices"
-#    class: camelcase
-#  - title: "One-Tube"
-#    url: "/#one-tube"
-#    description: "Decentralised Peer-2-Peer Video Sharing on the web"    
-#    class: camelcase    
-#  - title: "Peer-2-Peer Smart Energy"
-#    url: "/#p2p-smart-energy"
-#    description: "Decentralised Peer-2-Peer selling of energy for communities"    
-#    class: camelcase    
-#  - title: "Sustainable Living Platform"
-#    url: "/#sustainable-living-platform"
-#    description: "Creating sustainable homes on a digital platform"            
-#    class: camelcase    
-#  - title: "The Travellers Wallet"
-#    url: "/#travellers-wallet"
-#    description: "Wallet, Banking & Budgeting for travellers"
-#    class: camelcase
-
 - title: "Latest Adventures"
   url: "/#latest-adventures"
   description: "Recent posts on digital nomadic life around the world"
 
-- title: "Services"
-  url: "/services/"
-  description: "Our services"  
-  dropdown:
-  - title: "Web Design & Development"
-    url: "/services/#service-web"
-    description: ""
-    icon: icon-browser2        
-  - title: "App Development"
-    url: "/services/#service-app"
-    description: ""         
-    icon: icon-mobile     
-  - title: "Core Programming"
-    url: "/services/#service-core"
-    description: ""          
-    icon: fa fa-code
-  - title: "Cloud / Big Data"
-    url: "/services/#service-cloud-bigdata"
-    description: ""
-    icon: icon-cloud          
-  - title: "Enterprise Architecture"
-    url: "/services/#service-enterprise-architecture"
-    description: ""              
-    icon: icon-circle-compass
-  - title: "Project Management"
-    url: "/services/#service-project-management"
-    description: ""  
-    icon: icon-basic_watch            
+- title: "Instagram"
+  url: "/#instagram"
+  description: "Latest photos on instagram"
 
 - title: "About Us"
   url: "/#about-us"
   description: "About Me"
-
-- title: "|"
-  class: nav-divider
-  additional: "aria-hidden='true'"
-
-
-- title: "Blog"
-  url: "/blog/"
-  description: "All our articles"
 
 - title: "Contact Us"
   url: "#contact"
